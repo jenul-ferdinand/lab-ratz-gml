@@ -1,2 +1,1 @@
-dt_create();
-dt_clear();
+ds_depthgrid = ds_grid_create(2, 1);

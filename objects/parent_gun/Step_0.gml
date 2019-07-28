@@ -13,8 +13,13 @@ if (cooldown_counter_start)
 	cooldown_counter++;
 }
 // Shooting
-if (mouse_check_button(bind_shoot)) && (ammo != 0)
+if (automatic) { mouse_check = mouse_check_button(bind_shoot); }
+else { mouse_check = mouse_check_button_pressed(bind_shoot); }
+if (mouse_check) && (ammo != 0)
 {
+	// Muzzle flash activate
+	muzzle_flash = true;
+	// Laser sight accuracy increase
 	if (laser_sight) 
 	{ 
 		bullet_spread = bullet_spread_new; 
@@ -30,7 +35,7 @@ if (mouse_check_button(bind_shoot)) && (ammo != 0)
 		// Bullet
 		var buffer_x = lengthdir_x(bullet_buffer, dir);
 		var buffer_y = lengthdir_y(bullet_buffer, dir);
-		var inst = instance_create_layer(x + buffer_x, y + buffer_y, "Instances", obj_bullet);
+		var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", obj_bullet);
 		inst.direction = dir;
 		inst.direction += random_range(-bullet_spread, bullet_spread + 1);
 		inst.image_angle = inst.direction;
@@ -45,6 +50,7 @@ if (mouse_check_button(bind_shoot)) && (ammo != 0)
 		cooldown_counter_start = false;
 		first_shot = false;
 		
+		// Recoil push back player
 		with (obj_player)
 		{
 			var dir = inst.direction;
@@ -57,23 +63,9 @@ if (mouse_check_button(bind_shoot)) && (ammo != 0)
 // Calculate Recoil
 current_recoil = max(0, floor(current_recoil * 0.8));
 
+// Activate flashlight or lasersight
 if (keyboard_check_pressed(bind_flashlight))
 {
 	if (laser_sight) { laser_sight_toggle = !laser_sight_toggle; }
 	if (flash_light) { flash_light_toggle = !flash_light_toggle; }
 }
-
-// Depth
-dt_add_ext
-(
-	sprite_index, 
-	image_index, 
-	x, 
-	y, 
-	image_xscale, 
-	image_yscale, 
-	image_angle, 
-	c_white, 
-	1, 
-	obj_player.y+1
-);

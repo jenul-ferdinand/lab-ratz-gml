@@ -1,1 +1,1 @@
-dt_destroy();
+ds_grid_destroy(ds_depthgrid);

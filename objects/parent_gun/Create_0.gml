@@ -1,5 +1,13 @@
 holder = obj_player;
 
+automatic = true;
+mouse_check = undefined;
+
+muzzle_flash = true;
+muzzle_flash_counter_start = false;
+muzzle_flash_counter = 0;
+muzzle_flash_time = 1;
+
 flash_light_toggle = false;
 flash_light = false;
 laser_sight_toggle = false;

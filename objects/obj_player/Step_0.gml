@@ -29,7 +29,8 @@ if (force_applied > 0)
 dir = point_direction(0, 0, x_input, y_input);
 hspd = lengthdir_x(len, dir) - hspd_force;
 vspd = lengthdir_y(len, dir) + vspd_force;
-// Collisions
+
+#region Collisions
 if (place_meeting(x + hspd, y, obj_collidable))
 {
 	while (!place_meeting(x + sign(hspd), y, obj_collidable))
@@ -46,6 +47,8 @@ if (place_meeting(x, y + vspd, obj_collidable))
 	}
 	vspd = 0;	
 }
+#endregion
+
 // Application of movement
 x += hspd;
 y += vspd;
@@ -62,5 +65,4 @@ else
 	else { image_xscale = 1; }
 }
 
-dt_add(sprite_index, image_index, x, y);
-dt_add(spr_player_shadow, image_index, x, y);
+//dt_add(spr_player_shadow, image_index, x, y);

@@ -14,8 +14,8 @@ bind_up = ord("W");
 bind_down = ord("S");
 bind_shoot = mb_left;
 
-instance_create_layer(x, y, "Instances", obj_camera);
-instance_create_layer(x, y, "Instances", obj_menu);
-instance_create_depth(x, y, -9999, obj_depth);
+//instance_create_layer(x, y, "Instances", obj_camera);
+//instance_create_layer(x, y, "Instances", obj_menu);
+//instance_create_depth(x, y, -9999, obj_depth);
 
-room_goto_next();
+//room_goto_next();
