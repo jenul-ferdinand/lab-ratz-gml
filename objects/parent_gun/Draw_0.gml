@@ -1,22 +1,51 @@
-/// @desc Draw event
+// Gun is drawn in the player draw event!
 
-// Draw laser
+// Laser
 var dir = point_direction(x, y, mouse_x, mouse_y);
 var buffer_x = lengthdir_x(bullet_buffer, dir);
 var buffer_y = lengthdir_y(bullet_buffer, dir);
 if (laser_sight) and (laser_sight_toggle)
 {
-	var c = make_colour_rgb(128, 0, 0);
+	var c = make_colour_rgb(255, 0, 0);
 	var length_x = lengthdir_x(1200, dir);
 	var length_y = lengthdir_y(1200, dir);
+	gpu_set_blendmode(bm_subtract);
+	surface_set_target(light);
 	draw_line_colour
 	(
-		(x - 2) + buffer_x, 
-		(y - 2) + buffer_y, 
-		(x - 2) + length_x, 
-		(y - 2) + length_y, 
+		(x - 2) + buffer_x - camera_get_view_x(view), 
+		(y - 2) + buffer_y - camera_get_view_y(view), 
+		(x - 2) + length_x - camera_get_view_x(view), 
+		(y - 2) + length_y - camera_get_view_y(view), 
 		c,c
 	);
+	surface_reset_target();
+	gpu_set_blendmode(bm_normal);
+}
+
+// Flashlight
+if (flash_light) and (flash_light_toggle)
+{
+	var c = make_colour_rgb(255, 255, 255);
+	var dir = point_direction(x, y, mouse_x, mouse_y);
+	var buffer_x = lengthdir_x(18, dir);
+	var buffer_y = lengthdir_y(18, dir);
+	var length_x = lengthdir_x(200, dir);
+	var length_y = lengthdir_y(200, dir);
+	gpu_set_blendmode(bm_subtract);
+	surface_set_target(light);
+	draw_triangle_colour
+	(
+		(x-2) + buffer_x - camera_get_view_x(view), 
+		(y-2) + buffer_y - camera_get_view_y(view),
+		(x-2) + length_x - camera_get_view_x(view),
+		(y-2) + length_y - camera_get_view_y(view),
+		(x-2) + length_x - camera_get_view_x(view),
+		(y-2) - length_y - camera_get_view_y(view),
+		c,c,c, false
+	)
+	surface_reset_target();
+	gpu_set_blendmode(bm_normal);
 }
 
 // Draw muzzle flash
