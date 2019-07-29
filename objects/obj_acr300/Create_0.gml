@@ -15,3 +15,5 @@ current_recoil = -1;
 
 ammo = 90;
 damage = 20;
+
+pickup = obj_acr300_pickup;

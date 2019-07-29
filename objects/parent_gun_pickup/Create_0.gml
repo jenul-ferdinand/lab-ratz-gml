@@ -1,3 +1,5 @@
-transfer = obj_ak47;
+event_inherited();
+
+transfer = undefined;
 
 y_loc = y;

@@ -15,3 +15,5 @@ current_recoil = -1;
 
 ammo = 90;
 damage = 30;
+
+pickup = obj_ak47_pickup;

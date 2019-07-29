@@ -1,4 +1,5 @@
 holder = obj_player;
+pickup = undefined;
 
 automatic = true;
 mouse_check = undefined;
@@ -9,9 +10,9 @@ muzzle_flash_counter = 0;
 muzzle_flash_time = 1;
 
 flash_light_toggle = false;
-flash_light = true;
+flash_light = false;
 laser_sight_toggle = false;
-laser_sight = false;
+laser_sight = true;
 laser_colour = c_red;
 
 first_shot = true;
@@ -31,3 +32,4 @@ recoil_push = 2;
 current_recoil = -1;
 
 ammo = 90;
+destroy = false;

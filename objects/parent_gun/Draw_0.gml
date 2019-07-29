@@ -1,3 +1,4 @@
+if (holder == noone) exit;
 // Gun is drawn in the player draw event!
 
 // Laser

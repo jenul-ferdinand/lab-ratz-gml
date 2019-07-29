@@ -1,3 +1,5 @@
+if (holder == noone) exit;
+
 var dir = point_direction(x, y, mouse_x, mouse_y);
 // Origin
 x = holder.x - lengthdir_x(current_recoil, dir);
@@ -69,3 +71,6 @@ if (keyboard_check_pressed(bind_flashlight))
 	if (laser_sight) { laser_sight_toggle = !laser_sight_toggle; }
 	if (flash_light) { flash_light_toggle = !flash_light_toggle; }
 }
+
+// Destroy
+if (destroy) { instance_destroy(); }

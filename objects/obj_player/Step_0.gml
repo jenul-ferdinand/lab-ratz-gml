@@ -65,4 +65,17 @@ else
 	else { image_xscale = 1; }
 }
 
-//dt_add(spr_player_shadow, image_index, x, y);
+
+if (holding != undefined)
+{
+	if (keyboard_check_pressed(bind_drop))
+	{
+		instance_create_layer(x, y + 32, "Instances", holding.pickup);
+		
+		holding.destroy = true;
+		holding.holder = noone;
+		holding = undefined;
+	}
+}
+
+

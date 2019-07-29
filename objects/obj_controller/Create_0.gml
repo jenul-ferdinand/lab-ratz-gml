@@ -3,8 +3,9 @@
 #macro LEFT 2
 #macro DOWN 3
 
-globalvar pause, bind_flashlight, bind_revert, bind_enter, bind_left, bind_right, bind_up, bind_down, bind_shoot;
+globalvar pause, bind_drop, bind_flashlight, bind_revert, bind_enter, bind_left, bind_right, bind_up, bind_down, bind_shoot;
 pause = true;
+bind_drop = ord("Q");
 bind_flashlight = ord("F");
 bind_revert = ord("X");
 bind_enter = vk_enter;
