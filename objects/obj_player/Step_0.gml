@@ -7,15 +7,16 @@ var up_key = keyboard_check(bind_up);
 x_input = right_key - left_key;
 y_input = down_key - up_key;
 
-if (x_input != 0) or (y_input != 0) { len = spd; } else { var len = 0; }
-
-if (right_key) or (left_key) or (down_key) or (up_key)
+var len;
+if (x_input != 0) or (y_input != 0) 
 {
+	len = spd; 
 	sprite_index = spr_player_run;
-}	
-else
-{
-	sprite_index = spr_player;	
+} 
+else 
+{ 
+	len = 0; 
+	sprite_index = spr_player;
 }
 
 // Force

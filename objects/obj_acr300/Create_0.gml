@@ -4,6 +4,7 @@ sound_shoot = snd_acr300_shoot;
 
 cooldown_time = 6;
 
+bullet = obj_bullet;
 bullet_buffer = 18;
 bullet_speed = 7;
 bullet_spread = 4;

@@ -37,7 +37,7 @@ if (mouse_check) && (ammo != 0)
 		// Bullet
 		var buffer_x = lengthdir_x(bullet_buffer, dir);
 		var buffer_y = lengthdir_y(bullet_buffer, dir);
-		var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", obj_bullet);
+		var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", bullet);
 		inst.direction = dir;
 		inst.direction += random_range(-bullet_spread, bullet_spread + 1);
 		inst.image_angle = inst.direction;

@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "266b9c8a-0b80-453f-8490-333a09f655d1",
+            "Value": {
+                "id": "24d94c38-8c2f-48a6-864f-9eade07d473e",
+                "resourcePath": "sprites\\spr_laser\\spr_laser.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "27443ff1-75ef-4daa-8e36-28255b4b1b3e",
             "Value": {
                 "id": "3457d919-1f58-425b-b17a-9dae8ca017be",
@@ -220,6 +228,14 @@
                 "id": "b7e29cf6-5226-4946-9663-772b15902f9e",
                 "resourcePath": "views\\599b2236-595b-47e6-81dd-283a7b5d68ec.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5a0b5470-9f93-4c0c-a12e-66246f2a652f",
+            "Value": {
+                "id": "91eb4d84-0331-4f26-a1f0-df2759f5ad24",
+                "resourcePath": "objects\\obj_laser\\obj_laser.yy",
+                "resourceType": "GMObject"
             }
         },
         {

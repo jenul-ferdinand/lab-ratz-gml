@@ -4,6 +4,7 @@ sound_shoot = snd_ak47_shoot;
 
 cooldown_time = 9;
 
+bullet = obj_bullet;
 bullet_buffer = 18;
 bullet_speed = 7;
 bullet_spread = 8;

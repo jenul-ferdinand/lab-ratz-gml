@@ -1,3 +1,5 @@
+image_speed = 1;
+
 hspd = 0;
 vspd = 0;
 hspd_force = 0;
