@@ -17,7 +17,8 @@ else
 { 
 	len = 0; 
 	sprite_index = spr_player;
-}
+} 
+// Test
 
 // Force
 if (force_applied > 0)
