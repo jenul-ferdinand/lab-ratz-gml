@@ -1,8 +1,37 @@
-if (instance_place(x, y, obj_player)) and (obj_player.holding == undefined)
+if (instance_place(x, y, obj_player)) and (obj_player.holding == undefined) and (!unpickable)
 {
 	instance_change(transfer, true);
 	obj_player.holding = transfer;
 }
 
-sprite_set_offset(spr_ak47, x, y + 10);
-y = scr_wave(ystart, ystart + 4, 1, 0);
+// If dropping
+if (drop)
+{
+	// Direction
+	drop_dir = point_direction(x, y, mouse_x, mouse_y);
+	// Vector
+	hspd = lengthdir_x(drop_spd, drop_dir);
+	vspd = lengthdir_y(drop_spd, drop_dir);
+	// Ease out
+	drop_spd *= 0.9;
+	// Apply movement
+	x += hspd;
+	y += vspd;
+	// Stop
+	if (drop_spd <= 0)
+	{
+		drop = false;
+		drop_spd = 10;
+	}
+	
+	// Un-pickable time
+	if (unpickable)
+	{
+		unpickable_counter++;
+		if (unpickable_counter >= unpickable_time)
+		{
+			unpickable = false;
+			unpickable_counter = 0;
+		}
+	}
+}

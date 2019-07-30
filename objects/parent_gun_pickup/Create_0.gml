@@ -2,4 +2,10 @@ event_inherited();
 
 transfer = undefined;
 
-y_loc = y;
+drop = false;
+drop_dir = undefined;
+drop_spd = 4;
+
+unpickable = false;
+unpickable_counter = 0;
+unpickable_time = 30;

@@ -66,12 +66,14 @@ else
 	else { image_xscale = 1; }
 }
 
-
+// Dropping gun
 if (holding != undefined)
 {
 	if (keyboard_check_pressed(bind_drop))
 	{
-		instance_create_layer(x, y + 32, "Instances", holding.pickup);
+		var ent = instance_create_layer(x, y-4, "Instances", holding.pickup);
+		if (!ent.drop) { ent.drop = true; } 
+		ent.unpickable = true;
 		
 		holding.destroy = true;
 		holding.holder = noone;

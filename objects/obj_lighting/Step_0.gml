@@ -4,6 +4,6 @@ if (!surface_exists(light))
 }
 
 surface_set_target(light);
-draw_set_colour(c_ltgray);
+draw_set_colour(make_color_rgb(64, 64, 64));
 draw_rectangle(0, 0, view_width, view_height, false);
 surface_reset_target();
