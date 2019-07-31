@@ -2,11 +2,11 @@ if (holder == noone) exit;
 // Gun is drawn in the player draw event!
 
 // Laser
-var dir = point_direction(x, y, mouse_x, mouse_y);
-var buffer_x = lengthdir_x(bullet_buffer, dir);
-var buffer_y = lengthdir_y(bullet_buffer, dir);
 if (laser_sight) and (laser_sight_toggle)
 {
+	var dir = point_direction(x, y, mouse_x, mouse_y);
+	var buffer_x = lengthdir_x(bullet_buffer, dir);
+	var buffer_y = lengthdir_y(bullet_buffer, dir);
 	var c = make_colour_rgb(255, 0, 0);
 	var length_x = lengthdir_x(1200, dir);
 	var length_y = lengthdir_y(1200, dir);
@@ -23,28 +23,36 @@ if (laser_sight) and (laser_sight_toggle)
 	surface_reset_target();
 	gpu_set_blendmode(bm_normal);
 }
-
 // Flashlight
-if (flash_light) and (flash_light_toggle)
+else if (flash_light) and (flash_light_toggle)
 {
-	var c = make_colour_rgb(255, 255, 255);
+	var light_length = flash_light_distance;
+	var light_fov = flash_light_fov;
+
 	var dir = point_direction(x, y, mouse_x, mouse_y);
+
 	var buffer_x = lengthdir_x(18, dir);
 	var buffer_y = lengthdir_y(18, dir);
-	var length_x = lengthdir_x(200, dir);
-	var length_y = lengthdir_y(200, dir);
+
+	var dir_l = dir + (light_fov / 2);
+	var dir_r = dir - (light_fov / 2);
+
 	gpu_set_blendmode(bm_subtract);
 	surface_set_target(light);
+
 	draw_triangle_colour
 	(
-		(x-2) + buffer_x - camera_get_view_x(view), 
-		(y-2) + buffer_y - camera_get_view_y(view),
-		(x-2) + length_x - camera_get_view_x(view),
-		(y-2) + length_y - camera_get_view_y(view),
-		(x-2) + length_x - camera_get_view_x(view),
-		(y-2) - length_y - camera_get_view_y(view),
-		c,c,c, false
+	    (x-2) + buffer_x - camera_get_view_x(view),
+	    (y-2) + buffer_y - camera_get_view_y(view),
+	    (x-2) + lengthdir_x(light_length, dir_l) - camera_get_view_x(view),
+	    (y-2) + lengthdir_y(light_length, dir_l) - camera_get_view_y(view),
+	    (x-2) + lengthdir_x(light_length, dir_r) - camera_get_view_x(view),
+	    (y-2) + lengthdir_y(light_length, dir_r) - camera_get_view_y(view),
+	    flash_light_brightness, 
+		c_black, c_black, 
+		false
 	)
+
 	surface_reset_target();
 	gpu_set_blendmode(bm_normal);
 }

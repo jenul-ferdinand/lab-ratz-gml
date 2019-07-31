@@ -1,3 +1,4 @@
+#region Movement
 // Inputs
 var down_key = keyboard_check(bind_down);
 var right_key = keyboard_check(bind_right);
@@ -53,6 +54,7 @@ if (place_meeting(x, y + vspd, obj_collidable))
 // Application of movement
 x += hspd;
 y += vspd;
+#endregion
 
 // Facing direction
 if (hspd != 0) and (hspd_force == 0)
@@ -66,19 +68,11 @@ else
 	else { image_xscale = 1; }
 }
 
-// Dropping gun
-if (holding != undefined)
-{
-	if (keyboard_check_pressed(bind_drop))
-	{
-		var ent = instance_create_layer(x, y-4, "Instances", holding.pickup);
-		if (!ent.drop) { ent.drop = true; } 
-		ent.unpickable = true;
-		
-		holding.destroy = true;
-		holding.holder = noone;
-		holding = undefined;
-	}
+// Health
+if (hp < 0) 
+{ 
+	game_restart();
+	hp = 0;
 }
 
 

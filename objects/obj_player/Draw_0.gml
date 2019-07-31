@@ -20,7 +20,7 @@ with (parent_gun)
 }
 
 // Draw lighting
-var size = 128;
+var size = 64;
 var colour = c_white;
 gpu_set_blendmode(bm_subtract);
 surface_set_target(light);

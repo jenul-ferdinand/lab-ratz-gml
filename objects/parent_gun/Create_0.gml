@@ -9,10 +9,14 @@ muzzle_flash_counter_start = false;
 muzzle_flash_counter = 0;
 muzzle_flash_time = 1;
 
+
+flash_light = true;
+flash_light_fov = 27;
 flash_light_toggle = false;
-flash_light = false;
+flash_light_distance = 275;
+flash_light_brightness = c_ltgray;
 laser_sight_toggle = false;
-laser_sight = true;
+laser_sight = false;
 laser_colour = c_red;
 
 first_shot = true;
@@ -32,5 +36,6 @@ recoil = 6;
 recoil_push = 2;
 current_recoil = -1;
 
-ammo = 90;
+first = true;
+ammo = 0;
 destroy = false;

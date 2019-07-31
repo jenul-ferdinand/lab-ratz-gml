@@ -1,3 +1,11 @@
+// Health Bar
+if (instance_exists(obj_player))
+{
+	var xx = 10, yy = 10;
+	draw_sprite(spr_healthbar_back, 0, xx, yy);
+	draw_sprite_ext(spr_healthbar_front, 0, xx + 45, yy, obj_player.hp/100, 1, 0, c_white, 1);
+}
+// Version text
 draw_set_font(fnt_main);
 draw_set_halign(fa_right);
 	var c, str, xx, yy, buffer;

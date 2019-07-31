@@ -1,5 +1,11 @@
 if (holder == noone) exit;
 
+if (first) 
+{ 
+	ammo = 90; 
+	first = false;
+}
+
 var dir = point_direction(x, y, mouse_x, mouse_y);
 // Origin
 x = holder.x - lengthdir_x(current_recoil, dir);
@@ -22,8 +28,8 @@ if (mouse_check) && (ammo != 0)
 	// Muzzle flash activate
 	muzzle_flash = true;
 	// Laser sight accuracy increase
-	if (laser_sight) 
-	{ 
+	if (laser_sight_toggle) 
+	{
 		bullet_spread = bullet_spread_new; 
 		recoil_push = 0; 
 	}
@@ -39,7 +45,7 @@ if (mouse_check) && (ammo != 0)
 		var buffer_y = lengthdir_y(bullet_buffer, dir);
 		var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", bullet);
 		inst.direction = dir;
-		inst.direction += random_range(-bullet_spread, bullet_spread + 1);
+		inst.direction += random_range(-bullet_spread, bullet_spread+1);
 		inst.image_angle = inst.direction;
 		inst.speed = bullet_speed;
 		
@@ -55,8 +61,7 @@ if (mouse_check) && (ammo != 0)
 		// Recoil push back player
 		with (obj_player)
 		{
-			var dir = inst.direction;
-			force_dir = -dir;
+			force_dir = -inst.direction;
 			force_applied = other.recoil_push;
 		}
 	}
@@ -65,12 +70,33 @@ if (mouse_check) && (ammo != 0)
 // Calculate Recoil
 current_recoil = max(0, floor(current_recoil * 0.8));
 
-// Activate flashlight or lasersight
+// Dropping gun
+with (obj_player)
+{
+	if (holding != undefined)
+	{
+		if (keyboard_check_pressed(bind_drop))
+		{
+			var ent = instance_create_layer(x, y-4, "Instances", holding.pickup);
+			if (!ent.drop) { ent.drop = true; } 
+			ent.unpickable = true;
+			ent.gun_id = other.id;
+		
+			holding.destroy = true;
+			holding.holder = noone;
+			holding = undefined;
+		}
+	}
+}
+
+// Flashlight and Lasersight
 if (keyboard_check_pressed(bind_flashlight))
 {
 	if (laser_sight) { laser_sight_toggle = !laser_sight_toggle; }
 	if (flash_light) { flash_light_toggle = !flash_light_toggle; }
 }
+if (laser_sight) { flash_light = false; }	
+if (flash_light) { laser_sight = false; }
 
 // Destroy
 if (destroy) { instance_destroy(); }

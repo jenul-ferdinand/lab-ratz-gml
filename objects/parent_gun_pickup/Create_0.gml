@@ -1,6 +1,7 @@
 event_inherited();
 
 transfer = undefined;
+gun_id = undefined;
 
 drop = false;
 drop_dir = undefined;
