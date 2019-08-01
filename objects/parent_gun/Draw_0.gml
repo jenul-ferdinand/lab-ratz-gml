@@ -1,12 +1,12 @@
 if (holder == noone) exit;
 // Gun is drawn in the player draw event!
 
+var dir = point_direction(x, y, mouse_x, mouse_y);
+var buffer_x = lengthdir_x(bullet_buffer, dir);
+var buffer_y = lengthdir_y(bullet_buffer, dir);
 // Laser
 if (laser_sight) and (laser_sight_toggle)
 {
-	var dir = point_direction(x, y, mouse_x, mouse_y);
-	var buffer_x = lengthdir_x(bullet_buffer, dir);
-	var buffer_y = lengthdir_y(bullet_buffer, dir);
 	var c = make_colour_rgb(255, 0, 0);
 	var length_x = lengthdir_x(1200, dir);
 	var length_y = lengthdir_y(1200, dir);

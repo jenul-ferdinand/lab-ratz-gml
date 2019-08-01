@@ -9,7 +9,6 @@ muzzle_flash_counter_start = false;
 muzzle_flash_counter = 0;
 muzzle_flash_time = 1;
 
-
 flash_light = true;
 flash_light_fov = 27;
 flash_light_toggle = false;
