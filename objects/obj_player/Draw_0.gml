@@ -1,3 +1,5 @@
+// Shadow
+draw_sprite_ext(spr_player_shadow, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.3);
 draw_self();
 
 // Draw gun
@@ -21,7 +23,7 @@ with (parent_gun)
 
 // Draw lighting
 var size = 64;
-var colour = c_white;
+var colour = c_orange;
 gpu_set_blendmode(bm_subtract);
 surface_set_target(light);
 draw_ellipse_colour

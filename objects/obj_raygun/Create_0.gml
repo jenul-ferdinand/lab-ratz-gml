@@ -1,13 +1,15 @@
 event_inherited();
 
-sound_shoot = snd_acr300_shoot;
+sound_shoot = snd_raygun_shoot;
 
-cooldown_time = 6;
+cooldown_time = 3;
 
-flash_light = false;
-laser_sight = true;
+automatic = false;
 
-bullet = obj_bullet;
+flashlight = false;
+laser_sight = false;
+
+bullet = obj_laser;
 bullet_buffer = 18;
 bullet_speed = 7;
 bullet_spread = 4;
@@ -18,6 +20,6 @@ recoil_push = 0.2;
 current_recoil = -1;
 
 ammo = 90;
-damage = 20;
+damage = 73;
 
-pickup = obj_acr300_pickup;
+pickup = obj_raygun_pickup;

@@ -1,17 +1,20 @@
 if (holder == noone) exit;
 // Gun is drawn in the player draw event!
 
+var dir = point_direction(x, y, mouse_x, mouse_y);
+var buffer_x = lengthdir_x(bullet_buffer, dir);
+var buffer_y = lengthdir_y(bullet_buffer, dir);
 // Laser
 if (laser_sight) and (laser_sight_toggle)
 {
-	var dir = point_direction(x, y, mouse_x, mouse_y);
-	var buffer_x = lengthdir_x(bullet_buffer, dir);
-	var buffer_y = lengthdir_y(bullet_buffer, dir);
 	var c = make_colour_rgb(255, 0, 0);
+	
 	var length_x = lengthdir_x(1200, dir);
 	var length_y = lengthdir_y(1200, dir);
+	
 	gpu_set_blendmode(bm_subtract);
 	surface_set_target(light);
+	
 	draw_line_colour
 	(
 		(x - 2) + buffer_x - camera_get_view_x(view), 
@@ -20,6 +23,7 @@ if (laser_sight) and (laser_sight_toggle)
 		(y - 2) + length_y - camera_get_view_y(view), 
 		c,c
 	);
+	
 	surface_reset_target();
 	gpu_set_blendmode(bm_normal);
 }
@@ -28,12 +32,7 @@ else if (flash_light) and (flash_light_toggle)
 {
 	var light_length = flash_light_distance;
 	var light_fov = flash_light_fov;
-
-	var dir = point_direction(x, y, mouse_x, mouse_y);
-
-	var buffer_x = lengthdir_x(18, dir);
-	var buffer_y = lengthdir_y(18, dir);
-
+	
 	var dir_l = dir + (light_fov / 2);
 	var dir_r = dir - (light_fov / 2);
 
@@ -59,11 +58,13 @@ else if (flash_light) and (flash_light_toggle)
 
 // Draw muzzle flash
 if (muzzle_flash_counter_start) { muzzle_flash_counter++ }
-if (mouse_check) and (ammo != 0) and (muzzle_flash)
+if (mouse_check) and (ammo != 0) and (muzzle_flash) and (cooldown_counter >= cooldown_time) 
 {
 	muzzle_flash_counter_start = true;
+	
 	buffer_x = lengthdir_x(bullet_buffer + 3, dir);
 	buffer_y = lengthdir_y(bullet_buffer + 3, dir);
+	
 	draw_sprite_ext
 	(
 		spr_muzzle_flash, 

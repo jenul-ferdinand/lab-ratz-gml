@@ -12,6 +12,8 @@ if (flash_alpha > 0)
 	flash_alpha -= 0.05;	
 }
 
+
+// Shooting
 //counter++;
 //if (counter >= 30)
 //{
