@@ -1,3 +1,5 @@
+//gaming
+
 holder = obj_player;
 pickup = undefined;
 
