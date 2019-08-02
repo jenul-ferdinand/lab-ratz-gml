@@ -12,6 +12,9 @@ if (flash_alpha > 0)
 	flash_alpha -= 0.05;	
 }
 
+if (direction > 120) and (direction < 240) { image_xscale = -1 } else { image_xscale = 1; }
+mp_potential_step_object(obj_player.x, obj_player.y, 1, parent_enemy_collidables);
+sprite_index = spr_enemy_scientist_run;
 
 // Shooting
 //counter++;

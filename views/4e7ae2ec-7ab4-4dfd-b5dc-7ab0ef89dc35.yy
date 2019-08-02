@@ -11,8 +11,7 @@
         "9c91bd59-31ac-42b9-9062-80fced1d0151",
         "c3521241-6af7-4461-b56c-86076d927f4f",
         "594f8551-a53d-4647-959e-b442e5a7be07",
-        "5a0b5470-9f93-4c0c-a12e-66246f2a652f",
-        "468bb4e2-0a65-4a23-bb37-87b2b88805d1"
+        "5a0b5470-9f93-4c0c-a12e-66246f2a652f"
     ],
     "filterType": "GMObject",
     "folderName": "Guns",

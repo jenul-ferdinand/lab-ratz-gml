@@ -1,16 +1,27 @@
 draw_self();
 
-var size = 16;
-var colour = make_colour_rgb(255, 163, 51);
-gpu_set_blendmode(bm_subtract);
+#region Lighting
 surface_set_target(light);
-draw_ellipse_colour
+gpu_set_blendmode(bm_subtract);
+var shake = lighting_shake_amount;
+// Outer Circle
+draw_set_colour(lighting_outer_colour);
+draw_circle
 (
-	x - size/2 - camera_get_view_x(view), 
-	y - size/2 - camera_get_view_y(view), 
-	x + size/2 - camera_get_view_x(view), 
-	y + size/2 - camera_get_view_y(view), 
-	colour, c_black, false
+	(x + random_range(-shake, shake)) - camera_get_view_x(view),
+	(y + random_range(-shake, shake)) - camera_get_view_y(view),
+	lighting_outer_radius + random_range(-shake, shake),
+	false
 );
-surface_reset_target();
+// Inner Circle
+draw_set_colour(lighting_inner_colour)
+draw_circle
+(
+	(x + random_range(-shake, shake)) - camera_get_view_x(view),
+	(y + random_range(-shake, shake)) - camera_get_view_y(view),
+	lighting_inner_radius + random_range(-shake, shake),
+	false
+);
 gpu_set_blendmode(bm_normal);
+surface_reset_target();
+#endregion

@@ -16,6 +16,5 @@ window_set_size(window_width, window_height);
 alarm[0] = 1;
 // Resize the application surface
 surface_resize(application_surface, window_width, window_height);
-
 // Zoom
 zoom = 0.75;
