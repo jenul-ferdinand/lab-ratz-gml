@@ -9,7 +9,6 @@ muzzle_flash_counter_start = false;
 muzzle_flash_counter = 0;
 muzzle_flash_time = 1;
 
-
 flash_light = false;
 flash_light_fov = 27;
 flash_light_toggle = false;
@@ -27,6 +26,7 @@ cooldown_counter_start = false;
 sound_shoot = snd_ak47_shoot;
 
 bullet = obj_bullet;
+bullet_amount = 1;
 bullet_buffer = 18;
 bullet_speed = 7;
 bullet_spread = 5;

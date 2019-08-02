@@ -7,7 +7,7 @@ var buffer_y = lengthdir_y(bullet_buffer, dir);
 // Laser
 if (laser_sight) and (laser_sight_toggle)
 {
-	var c = make_colour_rgb(255, 0, 0);
+	var c = laser_colour;
 	
 	var length_x = lengthdir_x(1200, dir);
 	var length_y = lengthdir_y(1200, dir);

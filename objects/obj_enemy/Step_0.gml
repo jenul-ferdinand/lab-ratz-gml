@@ -1,18 +1,4 @@
-// Death
-if (hp <= 0) { instance_destroy(); }
-
-// Flash
-if (hit) 
-{ 
-	flash_alpha = 0.75; 
-	hit = false; 
-}
-if (flash_alpha > 0)
-{
-	flash_alpha -= 0.05;	
-}
-
-if (direction > 120) and (direction < 240) { image_xscale = -1 } else { image_xscale = 1; }
+// Moving
 mp_potential_step_object(obj_player.x, obj_player.y, 1, parent_enemy_collidables);
 sprite_index = spr_enemy_scientist_run;
 
@@ -26,3 +12,19 @@ sprite_index = spr_enemy_scientist_run;
 //	inst.speed = 2;
 //	counter = 0;
 //}
+
+if (direction > 120) and (direction < 240) { image_xscale = -1 } else { image_xscale = 1; }
+
+// Death
+if (hp <= 0) { instance_destroy(); }
+
+// Flash
+if (hit) 
+{ 
+	flash_alpha = 0.75; 
+	hit = false; 
+}
+if (flash_alpha > 0) 
+{
+	flash_alpha -= 0.05;	
+}

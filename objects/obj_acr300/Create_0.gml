@@ -11,7 +11,7 @@ laser_sight = true;
 // Bullet
 bullet = obj_bullet;
 bullet_buffer = 18;
-bullet_speed = 7;
+bullet_speed = 3.5;
 bullet_spread = 4;
 bullet_spread_new = bullet_spread - 2;
 // Recoil

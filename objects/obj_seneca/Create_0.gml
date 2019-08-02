@@ -1,26 +1,27 @@
 event_inherited();
-// Sound Effects
+// Sound effect
 sound_shoot = snd_ak47_shoot;
 // Cooldown
-cooldown_time = 9;
+cooldown_time = 8;
 // Mode
-automatic = true;
+automatic = false;
 // Attachments
-flash_light = true;
+flashlight = false;
 laser_sight = false;
 // Bullet
 bullet = obj_bullet;
+bullet_amount = 2;
 bullet_buffer = 18;
-bullet_speed = 3;
-bullet_spread = 8;
+bullet_speed = 2.75;
+bullet_spread = 7;
 bullet_spread_new = bullet_spread - 2;
 // Recoil
-recoil = 6;
-recoil_push = 2;
+recoil = 16;
+recoil_push = 0.6;
 current_recoil = -1;
 // Ammo
 ammo = 90;
 // Damage
-damage = 24;
-// Pickup Object
-pickup = obj_ak47_pickup;
+damage = 32;
+// Pickup
+pickup = obj_seneca_pickup;

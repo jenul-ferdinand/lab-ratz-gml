@@ -40,18 +40,39 @@ if (mouse_check) && (ammo != 0)
 	{
 		// Audio
 		audio_play_sound(sound_shoot, 10, 0);
-		// Bullet
-		var buffer_x = lengthdir_x(bullet_buffer, dir);
-		var buffer_y = lengthdir_y(bullet_buffer, dir);
-		var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", bullet);
-		inst.direction = dir;
-		inst.direction += random_range(-bullet_spread, bullet_spread+1);
-		inst.image_angle = inst.direction;
-		inst.speed = bullet_speed;
 		
-		// Ammo and recoil
-		ammo--;
-		current_recoil = recoil;
+		for (var i = 0; i < bullet_amount; i++)
+		{
+			
+			// Bullet
+			var buffer_x = lengthdir_x(bullet_buffer, dir);
+			var buffer_y = lengthdir_y(bullet_buffer, dir);
+			var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", bullet);
+			inst.direction = dir;
+			inst.image_angle = inst.direction;
+			inst.speed = bullet_speed;
+			
+			if (bullet_amount == 1) 
+			{ 
+				// Random Recoil
+				inst.direction += random_range(-bullet_spread, bullet_spread+1); 
+			}
+			else 
+			{
+				// Double Shot
+				var bspread;
+				switch (i)
+				{
+					case 0: bspread = -bullet_spread; break;
+					case 1: bspread = bullet_spread; break;
+				}
+				inst.direction += bspread;
+			}
+		
+			// Ammo and recoil
+			ammo--;
+			current_recoil = recoil;
+		}
 		
 		// Variables
 		cooldown_counter = 0;

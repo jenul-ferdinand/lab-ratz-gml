@@ -1,3 +1,5 @@
+if (!instance_exists(obj_player)) or (obj_player.holding == undefined) exit;
+
 // Hit
 other.hit = true;
 // Damage
