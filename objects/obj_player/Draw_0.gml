@@ -1,5 +1,5 @@
 // Shadow
-draw_sprite_ext(spr_player_shadow, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.3);
+draw_sprite_ext(spr_people_shadow, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.3);
 draw_self();
 
 // Gun

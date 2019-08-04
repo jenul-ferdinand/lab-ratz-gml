@@ -1,11 +1,5 @@
 if (holder == noone) exit;
 
-if (first) 
-{ 
-	ammo = 90; 
-	first = false;
-}
-
 var dir = point_direction(x, y, mouse_x, mouse_y);
 // Origin
 x = holder.x - lengthdir_x(current_recoil, dir);
@@ -15,81 +9,89 @@ image_angle = dir;
 // Flipping
 if (dir > 90) and (dir < 270) { image_yscale = -1; } else { image_yscale = 1; } 
 
-// Cooldown counter
-if (cooldown_counter_start)
-{
-	cooldown_counter++;
-}
 // Shooting
 if (automatic) { mouse_check = mouse_check_button(bind_shoot); }
 else { mouse_check = mouse_check_button_pressed(bind_shoot); }
-if (mouse_check) && (ammo != 0)
+if (mouse_check) 
+{
+	if (cooldown == 0)
+	{
+		cooldown = cooldown_time;
+		cooldown_delay = cooldown_startup;
+	}
+}
+if (cooldown_delay == 0) and (mag != 0)
 {
 	// Muzzle flash activate
-	muzzle_flash = true;
-	// Laser sight accuracy increase
-	if (laser_sight_toggle) 
-	{
-		bullet_spread = bullet_spread_new; 
-		recoil_push = 0; 
-	}
+	if (muzzle_flash == false) { muzzle_flash = true; } 
 	
-	// Cooldown check
-	cooldown_counter_start = true;
-	if (cooldown_counter >= cooldown_time) or (first_shot)
+	// Audio
+	audio_play_sound(sound_shoot, 10, 0);
+		
+	for (var i = 0; i < bullet_amount; i++)
 	{
-		// Audio
-		audio_play_sound(sound_shoot, 10, 0);
-		
-		for (var i = 0; i < bullet_amount; i++)
+		// Bullet
+		var buffer_x = lengthdir_x(bullet_buffer, dir);
+		var buffer_y = lengthdir_y(bullet_buffer, dir);
+		var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", bullet);
+		inst.direction = dir;
+		inst.image_angle = inst.direction;
+		inst.speed = bullet_speed;
+		inst.creator = obj_player;
+			
+		if (bullet_amount == 1) 
+		{ 
+			// Random Recoil
+			inst.direction += random_range(-bullet_spread, bullet_spread+1); 
+		}
+		else 
 		{
-			
-			// Bullet
-			var buffer_x = lengthdir_x(bullet_buffer, dir);
-			var buffer_y = lengthdir_y(bullet_buffer, dir);
-			var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "Instances", bullet);
-			inst.direction = dir;
-			inst.image_angle = inst.direction;
-			inst.speed = bullet_speed;
-			
-			if (bullet_amount == 1) 
-			{ 
-				// Random Recoil
-				inst.direction += random_range(-bullet_spread, bullet_spread+1); 
-			}
-			else 
+			// Double Shot
+			var bspread;
+			switch (i)
 			{
-				// Double Shot
-				var bspread;
-				switch (i)
-				{
-					case 0: bspread = -bullet_spread; break;
-					case 1: bspread = bullet_spread; break;
-				}
-				inst.direction += bspread;
+				case 0: bspread = -bullet_spread; break;
+				case 1: bspread = bullet_spread; break;
 			}
-		
-			// Ammo and recoil
-			ammo--;
-			current_recoil = recoil;
+			inst.direction += bspread;
 		}
 		
-		// Variables
-		cooldown_counter = 0;
-		cooldown_counter_start = false;
-		first_shot = false;
-		
-		// Recoil push back player
-		with (obj_player)
-		{
-			force_dir = -inst.direction;
-			force_applied = other.recoil_push;
-		}
+		// Ammo and recoil
+		mag--;
+		current_recoil = recoil;
 	}
-}	
+		
+	// Recoil push back player
+	with (obj_player)
+	{
+		force_dir = -inst.direction;
+		force_applied = other.recoil_push;
+	}
+}
 
-// Calculate Recoil
+// Calculations
+cooldown_delay = max(-1, cooldown_delay-1);
+if (cooldown_delay == -1) { cooldown = max(0, cooldown-1); }
 current_recoil = max(0, floor(current_recoil * 0.8));
+
+// Reloading
+if (mag <= 0) and (!reload) and (ammo != 0)
+{ 
+	if (keyboard_check_pressed(bind_reload)) 
+	{ 
+		reload_counter_start = true;
+	}
+}
+if (reload_counter_start) { reload_counter++; }
+if (reload_counter >= reload_time) { reload = true; }
+if (reload)
+{
+	mag = mag_max;
+	ammo -= mag_max;
+	reload = false;
+	reload_counter = 0;
+	reload_counter_start = false;
+}
 
 // Dropping gun
 with (obj_player)
@@ -118,6 +120,14 @@ if (keyboard_check_pressed(bind_flashlight))
 }
 if (laser_sight) { flash_light = false; }	
 if (flash_light) { laser_sight = false; }
+
+// Laser sight accuracy increase
+if (laser_sight_toggle) 
+{
+	bullet_spread = bullet_spread_new; 
+	recoil_push = 0; 
+}
+
 
 // Destroy
 if (destroy) { instance_destroy(); }

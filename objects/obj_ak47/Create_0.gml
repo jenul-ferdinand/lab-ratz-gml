@@ -19,6 +19,8 @@ recoil = 6;
 recoil_push = 2;
 current_recoil = -1;
 // Ammo
+mag = 30;
+mag_max = 30;
 ammo = 90;
 // Damage
 damage = 24;

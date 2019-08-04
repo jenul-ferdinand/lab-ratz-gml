@@ -33,21 +33,25 @@ hspd = lengthdir_x(len, dir) - hspd_force;
 vspd = lengthdir_y(len, dir) + vspd_force;
 
 #region Collisions
-if (place_meeting(x + hspd, y, obj_collidable))
+var collisions = [obj_wall_bottom, obj_wall_top];
+for (var i = 0; i < array_length_1d(collisions); i++)
 {
-	while (!place_meeting(x + sign(hspd), y, obj_collidable))
+	if (place_meeting(x + hspd, y, collisions[i]))
 	{
-		x += sign(hspd);	
+		while (!place_meeting(x + sign(hspd), y, collisions[i]))
+		{
+			x += sign(hspd);	
+		}
+		hspd = 0;
 	}
-	hspd = 0;
-}
-if (place_meeting(x, y + vspd, obj_collidable))
-{
-	while (!place_meeting(x, y + sign(vspd), obj_collidable))
+	if (place_meeting(x, y + vspd, collisions[i]))
 	{
-		y += sign(vspd);	
+		while (!place_meeting(x, y + sign(vspd), collisions[i]))
+		{
+			y += sign(vspd);	
+		}
+		vspd = 0;	
 	}
-	vspd = 0;	
 }
 #endregion
 

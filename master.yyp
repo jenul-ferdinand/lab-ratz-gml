@@ -186,7 +186,7 @@
             "Key": "2a5a0896-bcd7-45d7-a417-a01880d22fd8",
             "Value": {
                 "id": "df2f78ba-5d1e-49a1-8eca-2c815e7c03e3",
-                "resourcePath": "objects\\obj_collidable\\obj_collidable.yy",
+                "resourcePath": "objects\\obj_wall_bottom\\obj_wall_bottom.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "57c09d83-79b8-453c-a8fe-96b0dded0891",
+            "Value": {
+                "id": "fbcc1aec-52d5-4192-833a-3ede3b4b4154",
+                "resourcePath": "sprites\\spr_wall_top\\spr_wall_top.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "594f8551-a53d-4647-959e-b442e5a7be07",
             "Value": {
                 "id": "8a388c83-a2aa-48a1-b49c-eb45955cc37f",
@@ -330,7 +338,7 @@
             "Key": "60ae7b65-667d-4a24-9397-caf19a70819e",
             "Value": {
                 "id": "e25f0f04-5fd3-4e8a-8494-ad7d7cea74c6",
-                "resourcePath": "sprites\\spr_player_shadow\\spr_player_shadow.yy",
+                "resourcePath": "sprites\\spr_people_shadow\\spr_people_shadow.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -439,6 +447,14 @@
             }
         },
         {
+            "Key": "7918dae4-1973-4d00-85fc-05ce22787d6e",
+            "Value": {
+                "id": "e23364d9-0c3f-4a22-a040-e3688b5aa813",
+                "resourcePath": "views\\7918dae4-1973-4d00-85fc-05ce22787d6e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "7b5ca3a6-15b9-44be-9abb-82436c4a290f",
             "Value": {
                 "id": "5c96421d-1044-4a49-8dd3-7d247aebc40d",
@@ -495,6 +511,14 @@
             }
         },
         {
+            "Key": "9131f881-d5b6-487e-93be-3476c695aac9",
+            "Value": {
+                "id": "9fd106e8-6d7a-4149-b34d-9b5d800b69de",
+                "resourcePath": "views\\9131f881-d5b6-487e-93be-3476c695aac9.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "94aa4476-3b43-4c62-9925-06102bc5a491",
             "Value": {
                 "id": "77f2f562-fe98-46c7-beab-df364dbc4a3b",
@@ -507,6 +531,14 @@
             "Value": {
                 "id": "d8c779da-567c-4713-b912-5ff8f17eded6",
                 "resourcePath": "views\\970022fd-50bc-40a3-a2b6-213778f86b8f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "98618442-2813-461c-8558-610facb66f4c",
+            "Value": {
+                "id": "c798fc38-f67b-4fe2-a381-77c40658ca00",
+                "resourcePath": "views\\98618442-2813-461c-8558-610facb66f4c.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -535,11 +567,27 @@
             }
         },
         {
+            "Key": "9deb4bf9-54c2-40d3-9b55-b360aa2849aa",
+            "Value": {
+                "id": "19d53268-86d0-4b69-ab54-4adb4cf9ea67",
+                "resourcePath": "views\\9deb4bf9-54c2-40d3-9b55-b360aa2849aa.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9f34d57d-856a-4706-b909-1bcaf4f591fb",
             "Value": {
                 "id": "cca1f585-b0ce-42ae-86e3-2755c8e0b337",
                 "resourcePath": "views\\9f34d57d-856a-4706-b909-1bcaf4f591fb.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a3790a7b-0443-4345-bf2e-dc96aeaafe1c",
+            "Value": {
+                "id": "d19801e8-f076-4c77-b043-1a94f68e3d93",
+                "resourcePath": "sprites\\spr_wall_bottom\\spr_wall_bottom.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -595,6 +643,14 @@
             "Value": {
                 "id": "bb395d88-0bfa-4e12-8de0-3585982d53b9",
                 "resourcePath": "objects\\parent_gun_pickup\\parent_gun_pickup.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c30c65b1-a2c1-459c-a89a-86e418a4ae04",
+            "Value": {
+                "id": "c182b042-1b5a-4400-8af5-7be9090f359c",
+                "resourcePath": "objects\\obj_wall_top\\obj_wall_top.yy",
                 "resourceType": "GMObject"
             }
         },

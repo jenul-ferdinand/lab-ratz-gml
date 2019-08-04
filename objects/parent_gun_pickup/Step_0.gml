@@ -1,8 +1,7 @@
 if (instance_place(x, y, obj_player)) and (obj_player.holding == undefined) and (!unpickable)
 {
-	var inst = instance_change(transfer, true);
+	instance_change(transfer, true);
 	obj_player.holding = transfer;
-	inst.ammo = 90;
 }
 
 // If dropping

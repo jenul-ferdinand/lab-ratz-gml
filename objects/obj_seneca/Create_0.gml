@@ -20,7 +20,9 @@ recoil = 16;
 recoil_push = 0.6;
 current_recoil = -1;
 // Ammo
-ammo = 90;
+mag = 8;
+mag_max = 8;
+ammo = 24;
 // Damage
 damage = 32;
 // Pickup

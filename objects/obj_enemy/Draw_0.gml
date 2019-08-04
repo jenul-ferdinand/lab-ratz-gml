@@ -1,10 +1,20 @@
 // Shadow
-draw_sprite_ext(spr_player_shadow, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.3);
+draw_sprite_ext(spr_people_shadow, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.3);
 draw_self();
 
 // Gun
 var gun_dir = point_direction(x, y, obj_player.x, obj_player.y);
-draw_sprite_ext(spr_ak47, 0, x, y-8, 1, image_xscale, gun_dir, c_white, 1);
+if (gun_dir > 120) and (gun_dir < 240) { gun_yscale = -1 } else { gun_yscale = 1; }
+draw_sprite_ext(
+	gun_sprite, 
+	0, 
+	x, 
+	y - gun_ybuffer, 
+	gun_xscale, gun_yscale, 
+	gun_dir, 
+	gun_imageblend, 
+	gun_alpha
+);
 
 // Flash shader
 if (flash_alpha > 0)

@@ -6,13 +6,27 @@ if (instance_exists(obj_player))
 	draw_sprite_ext(spr_healthbar_front, 0, xx + 45, yy, obj_player.hp/100, 1, 0, c_white, 1);
 }
 
+
+
 // Ammo amount
 if (obj_player.holding != undefined)
-{
-	var gun_ammo, gun_sprite, height_buffer, gun_x, gun_y, xx, yy, c, str;
+{	
+	var gun_ammo, gun_mag, gun_sprite, height_buffer, gun_x, gun_y, xx, yy, c, str;
 	with (obj_player) 
 	{
+		// Reloading bar
+		if (holding.reload_counter_start)
+		{
+			var x1 = 10;
+			var y1 = window_height - 90;
+			var x2 = 250;
+			var y2 = window_height - 65;
+			var value = (holding.reload_counter / holding.reload_time) * 100;
+			draw_healthbar(x1, y1, x2, y2, value, c_gray, c_white, c_white, 0, true, false);
+		}
+		
 		gun_ammo = holding.ammo;
+		gun_mag = holding.mag;
 		gun_sprite = object_get_sprite(holding);
 	}
 	
@@ -20,15 +34,13 @@ if (obj_player.holding != undefined)
 	height_buffer = 30
 	gun_x = 15 + sprite_get_width(gun_sprite);
 	gun_y = window_height - height_buffer;
-	
 	draw_sprite_ext(gun_sprite, 0, gun_x, gun_y, 4, 4, 0, c_white, 1);
 	
 	// Counter
 	height_buffer = 50;
 	xx = (gun_x*2.5) + 10;
 	yy = window_height - height_buffer;
-	str = string(gun_ammo);
-	
+	str = string(gun_mag) + "/" + string(gun_ammo);
 	draw_set_font(fnt_ammo);
 	c = c_black;
 	draw_text_colour(xx+5, yy, str, c,c,c,c, 1);

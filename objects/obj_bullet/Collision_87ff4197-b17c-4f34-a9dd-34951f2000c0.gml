@@ -1,0 +1,5 @@
+if (creator != obj_enemy) exit;
+// Damage player
+other.hp -= creator.damage;
+// Destroy bullet
+instance_destroy();
