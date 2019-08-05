@@ -23,6 +23,6 @@ mag = 10;
 mag_max = 10;
 ammo = 40;
 // Damage
-damage = 27;
+damage = 64;
 // Pickup
 pickup = obj_raygun_pickup;

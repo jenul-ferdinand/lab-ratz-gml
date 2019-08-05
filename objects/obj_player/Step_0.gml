@@ -12,12 +12,12 @@ var len;
 if (x_input != 0) or (y_input != 0) 
 {
 	len = spd; 
-	sprite_index = spr_player_run;
+	sprite_index = sprite_run;
 } 
 else 
 { 
 	len = 0; 
-	sprite_index = spr_player;
+	sprite_index = sprite;
 } 
 
 // Force

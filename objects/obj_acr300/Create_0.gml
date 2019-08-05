@@ -23,6 +23,6 @@ mag = 24;
 mag_max = 24;
 ammo = 96;
 // Damage
-damage = 18;
+damage = 43;
 // Pickup objects
 pickup = obj_acr300_pickup;

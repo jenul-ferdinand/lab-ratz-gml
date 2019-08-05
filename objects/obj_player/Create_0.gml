@@ -19,3 +19,10 @@ lighting_outer_colour = c_dkgray;
 lighting_inner_radius = 30;
 lighting_outer_radius = 60;
 lighting_shake_amount = 1;
+// Sprites
+normal_sprite = spr_player_normal;
+normal_sprite_run = spr_player_normal_run;
+radsuit_sprite = spr_player_radsuit;
+radsuit_sprite_run = spr_player_radsuit;
+sprite = normal_sprite;
+sprite_run = normal_sprite_run;

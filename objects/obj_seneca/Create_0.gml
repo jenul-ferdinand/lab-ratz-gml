@@ -1,6 +1,6 @@
 event_inherited();
 // Sound effect
-sound_shoot = snd_ak47_shoot;
+sound_shoot = snd_seneca_shoot;
 // Cooldown
 cooldown_time = 8;
 // Mode
@@ -24,6 +24,6 @@ mag = 8;
 mag_max = 8;
 ammo = 24;
 // Damage
-damage = 32;
+damage = 45;
 // Pickup
 pickup = obj_seneca_pickup;

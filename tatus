@@ -1,0 +1,114 @@
+[33mcommit 677e02d70d4b033f21962a04496597fefc1dcaf6[m[33m ([m[1;36mHEAD -> [m[1;32mjenul-develop[m[33m, [m[1;31morigin/jenul-develop[m[33m)[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Sun Aug 4 21:58:24 2019 +1000
+
+    - fixed muzzle flash bug
+    - added ammo reloading progress bar on bottom left
+    - added new player sprite
+    - added new scientist sprite
+    - added new animation for the gun pickups
+    - added new shadow for the gun pickups
+    - added wall bottom and wall top sprites
+    - added bullet collision with walls
+    - fixed bullet problems with creators
+    - fixed performance
+    - changed the room up
+    - added new user interface stuff
+    - optimized gun_parent code
+
+[33mcommit 42b08c1d70c70086ccb2cf4b3e365668da3f9cd5[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Sat Aug 3 00:07:36 2019 +1000
+
+    - added seneca double barrel shotgun
+    - added the ability to shoot two bullets
+    - changed bullet speeds on all guns to be slower
+
+[33mcommit 3dcb301f2ad91b2d86ab5821d9e91fabecdc4176[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Fri Aug 2 16:34:44 2019 +1000
+
+    - added new enemy sprites
+    - added chase enemy a.i
+    - added new lighting system
+    - added new variables to alter gun mechanics
+
+[33mcommit 6a823c186cc8852d29a778d48e5cc90a46e3bc35[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Thu Aug 1 19:05:33 2019 +1000
+
+    progress
+
+[33mcommit a4e04d3cf270b348a774a7b87b8bb01a43b45fd6[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/daniel-develop[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdaniel-develop[m[33m)[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Wed Jul 31 21:22:21 2019 +1000
+
+    - new flashlight work
+    - added healthbar
+    - organised groups
+
+[33mcommit 952317b2599e18ea126b01cf933a904fe8251e30[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Tue Jul 30 18:49:22 2019 +1000
+
+    added gun dropping capabilities
+
+[33mcommit e35e8fb14c2be1a596cd207d7be46a1206f1dc62[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Mon Jul 29 21:41:01 2019 +1000
+
+    test
+
+[33mcommit cbea1ec96c52fafb0135fe331c61ae3962f77eaa[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Mon Jul 29 21:30:00 2019 +1000
+
+    test
+
+[33mcommit b366acd96783361da07b650f154b00532ac992e5[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Mon Jul 29 21:07:32 2019 +1000
+
+    progress
+
+[33mcommit 9974c39b2613f181a4d4af1e57bee1f35483f994[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Mon Jul 29 20:38:28 2019 +1000
+
+    progress
+
+[33mcommit 4e9beb7a248eb917d593b315773daadf39815d5d[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Mon Jul 29 19:48:53 2019 +1000
+
+    progress
+
+[33mcommit 43d2993ecdc14b2164e744427256028f6631fb00[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Sun Jul 28 20:45:03 2019 +1000
+
+    progress
+
+[33mcommit da6df472f79d10b7fc430affe3cbab4237b0bab3[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Sun Jul 28 19:29:12 2019 +1000
+
+    added new depth system, and other things
+
+[33mcommit fc57ac78bc32c4c2fabc6f5612f1c323b6070250[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Sun Jul 28 12:11:18 2019 +1000
+
+    added acr300
+
+[33mcommit b8141c0c74e7f197341b5e91482036b40d54362d[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Sun Jul 28 11:43:38 2019 +1000
+
+    progress
+
+[33mcommit b51e441825684090e13f2e8748391a70afba6613[m
+Author: Proxy <jenul15ferdinand@gmail.com>
+Date:   Sat Jul 27 17:40:51 2019 +1000
+
+    Created Repository

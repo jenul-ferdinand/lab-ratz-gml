@@ -23,6 +23,6 @@ mag = 30;
 mag_max = 30;
 ammo = 90;
 // Damage
-damage = 24;
+damage = 47;
 // Pickup Object
 pickup = obj_ak47_pickup;

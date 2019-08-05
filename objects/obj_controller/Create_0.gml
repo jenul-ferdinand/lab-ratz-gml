@@ -2,7 +2,7 @@
 #macro UP 1
 #macro LEFT 2
 #macro DOWN 3
-
+// Binds
 globalvar pause, bind_drop, bind_flashlight, bind_revert, bind_enter, bind_left, bind_right, bind_up, bind_down, bind_shoot, bind_reload;
 pause = true;
 bind_drop = ord("Q");
@@ -15,6 +15,8 @@ bind_up = ord("W");
 bind_down = ord("S");
 bind_shoot = mb_left;
 bind_reload = ord("R");
+// Play Soundtrac
+audio_play_sound(snd_soundtrack, 0, 0);
 
 //instance_create_layer(x, y, "Instances", obj_camera);
 //instance_create_layer(x, y, "Instances", obj_menu);
