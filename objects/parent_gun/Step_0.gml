@@ -10,13 +10,14 @@ image_angle = dir;
 if (dir > 90) and (dir < 270) { image_yscale = -1; } else { image_yscale = 1; } 
 
 // Shooting
-if (automatic) { mouse_check = mouse_check_button(bind_shoot); }
-else { mouse_check = mouse_check_button_pressed(bind_shoot); }
-if (mouse_check) 
+var mouseb;
+if (automatic) { mouseb = mouse_check_button(bind_shoot); } 
+else { mouseb = mouse_check_button_pressed(bind_shoot); }
+if (mouseb) 
 {
 	if (cooldown == 0)
 	{
-		cooldown = cooldown_time;
+		cooldown = firerate;
 		cooldown_delay = cooldown_startup;
 	}
 }

@@ -1,5 +1,5 @@
-event_inherited();
-
+creator = undefined;
+destroy = false;
 // Lighting
 lighting_inner_colour = c_white;
 lighting_outer_colour = c_dkgray;

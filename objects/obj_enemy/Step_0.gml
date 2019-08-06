@@ -1,63 +1,120 @@
+var player_distance = point_distance(x, y, target.x, target.y);
+var player_direction = point_direction(x, y, target.x, target.y);
+
 switch (state)
 {
 	case "Idle":
-		sprite_index = spr_enemy_scientist;
+		counter++;
+		if (counter >= idle_time)
+		{
+			var flip = choose(0, 1)
+			switch (flip)
+			{
+				case 0:
+					state = "Wander";
+					counter = 0;
+					break;
+				
+				case 1:
+					counter = 0;
+					break;
+			}
+		}
+		// Animation
+		sprite_index = sprite_idle;
 		break;
 		
-	case "Move":
-	
+	case "Wander":
+		mp_potential_step_object(hspd, vspd, wander_speed, parent_enemy_collidables);
+		
+		counter++;
+		if (counter >= wander_time)
+		{
+			var flip = choose(0, 1);
+			switch (flip)
+			{
+				case 0:
+					var dir = random_range(0, 359);
+					hspd = lengthdir_x(0, dir);
+					vspd = lengthdir_y(0, dir);
+					counter = 0;
+					break;
+					
+				case 1: 
+					state = "Idle";
+					counter = 0;
+					break;
+			}
+		}
+		// Switching states
+		if (player_distance < chase_radius) { state = "Chase"; } 
+		
+		// Animation
+		sprite_index = sprite_run;
 		break;
 		
 	case "Chase":
-		mp_potential_step_object(obj_player.x, obj_player.y, chase_speed, parent_enemy_collidables);
+		// Movement
+		mp_potential_step_object(target.x, target.y, chase_speed, parent_enemy_collidables);
 		
-		if (point_distance(x, y, obj_player.x, obj_player.y) < shoot_radius) { state = "Shoot"; }
-		sprite_index = spr_enemy_scientist_run;
+		// Switching states
+		if (player_distance < shoot_radius) { state = "Shoot"; }
+		if (player_distance > chase_radius) { state = "Idle"; }
+		
+		// Animation
+		sprite_index = sprite_run;
 		break;
 		
 	case "Shoot":
+		// Cooldown
 		counter++;
-		if (counter >= 30)
+		if (counter >= shoot_cooldown)
 		{
+			// Sound effect
 			if (!gunshot_played)
 			{
-				audio_play_sound(snd_ak47_shoot, 0, 0);
+				audio_play_sound(shoot_sound, 0, 0);
 				gunshot_played = true;
 			}
 			
-			var inst, x_buffer, y_buffer, shoot_dir;
-			shoot_dir = point_direction(x, y, obj_player.x, obj_player.y);
-			x_buffer = lengthdir_x(bullet_buffer, shoot_dir);
-			y_buffer = lengthdir_y(bullet_buffer, shoot_dir);
-			inst = instance_create_layer(x + x_buffer, (y-gun_ybuffer) + y_buffer, "Instances", obj_bullet);
+			// Bullet
+			var shoot_dir = player_direction;
+			var x_buffer = lengthdir_x(bullet_buffer, shoot_dir);
+			var y_buffer = lengthdir_y(bullet_buffer, shoot_dir);
+			var inst = instance_create_layer(x + x_buffer, (y-gun_ybuffer) + y_buffer, "Instances", bullet_index);
 			inst.direction = shoot_dir;
 			inst.image_angle = inst.direction;
 			inst.speed = bullet_speed;
 			inst.creator = obj_enemy;
+			
+			// Reset cooldown
 			counter = 0;
 		}
 		else
 		{
+			// Reset sound effect variable
 			gunshot_played = false;	
 		}
 		
-		if (point_distance(x, y, obj_player.x, obj_player.y) > shoot_radius) { state = "Chase"; }
-		sprite_index = spr_enemy_scientist;
+		// Switching States
+		if (player_distance > shoot_radius) { state = "Chase"; }
+		
+		// Animation
+		sprite_index = sprite_idle;
 		break;
 }
 
+// Flipping
 if (direction > 120) and (direction < 240) { image_xscale = -1 } else { image_xscale = 1; }
-
 // Death
 if (hp <= 0) { instance_destroy(); }
-
 // Flash
 if (hit) 
 { 
-	flash_alpha = 0.75; 
+	flash_alpha = flash_alpha_max; 
 	hit = false; 
 }
 if (flash_alpha > 0) 
 {
-	flash_alpha -= 0.05;	
+	flash_alpha -= flash_reduction;	
 }
