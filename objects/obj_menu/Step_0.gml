@@ -22,7 +22,7 @@ if (inputting)
 				// Sound effect here
 			}
 			break;
-		case menu_type.slider:
+		case menu_type.slider:		
 			var h_input = keyboard_check(bind_right) - keyboard_check(bind_left);
 			if (h_input != 0)
 			{

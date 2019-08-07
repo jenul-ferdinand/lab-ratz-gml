@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "snd_ak47_shoot",
-    "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
+    "audioGroupGuid": "aee09f60-c657-49d5-8276-bbf887ac27ce",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

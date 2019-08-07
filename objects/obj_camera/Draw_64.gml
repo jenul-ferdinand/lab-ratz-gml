@@ -6,8 +6,6 @@ if (instance_exists(obj_player))
 	draw_sprite_ext(spr_healthbar_front, 0, xx + 45, yy, obj_player.hp/100, 1, 0, c_white, 1);
 }
 
-
-
 // Ammo amount
 if (obj_player.holding != undefined)
 {	

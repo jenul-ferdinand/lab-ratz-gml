@@ -1,3 +1,5 @@
+if (game_stop) exit;
+
 #region Movement
 // Inputs
 var down_key = keyboard_check(bind_down);

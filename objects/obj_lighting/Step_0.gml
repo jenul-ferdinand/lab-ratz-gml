@@ -13,4 +13,5 @@ else
 	// If the surface doesn't exist, create it!
 	light = surface_create(room_width, room_height);
 	surface_set_target(light);
+	surface_reset_target();
 }

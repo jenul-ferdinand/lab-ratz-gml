@@ -1,17 +1,7 @@
 if (!instance_exists(obj_player)) 
 or (obj_player.holding == undefined) 
-or (creator != obj_player) exit;
+or (creator != obj_player) 
+or (game_stop) exit;
 
-// Hit
 other.hit = true;
-		
-// Damage
-var dmg;
-with (obj_player.holding) { dmg = damage; }
-other.hp -= dmg;
-		
-// Hitmarker
-audio_play_sound(snd_hitmarker, 10, 0);
-		
-// Destroy Bullet
 instance_destroy();

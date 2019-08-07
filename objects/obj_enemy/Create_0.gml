@@ -1,18 +1,24 @@
+randomise();
+
 hit = false;
 hspd = 0;
 vspd = 0;
 counter = 0;
 state = "Idle";
+dir = random_range(0, 359);
 // Stats
 hp = 100;
 target = obj_player;
-// A.I Timings
+// A.I
+colliding = parent_enemy_collidables;
 idle_time = 10;
 chase_speed = 1;
 chase_radius = 128;
 wander_time = 30;
 wander_speed = 1;
 shoot_radius = 76;
+approach_time = room_speed * 10;
+inclusion_radius = 128;
 // Bullet
 bullet_speed = 2;
 bullet_buffer = 18;

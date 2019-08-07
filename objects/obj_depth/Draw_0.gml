@@ -1,3 +1,5 @@
+if (game_stop) exit;
+
 var dgrid = ds_depthgrid;
 var inst_num = instance_number(parent_depth);
 ds_grid_resize(dgrid, 2, inst_num);

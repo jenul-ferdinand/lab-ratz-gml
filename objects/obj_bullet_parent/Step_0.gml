@@ -1,3 +1,5 @@
+if (game_stop) exit;
+
 // Destroy on collision with walls
 var walls = [obj_wall_bottom, obj_wall_top];
 for (var i = 0; i < array_length_1d(walls); i++)

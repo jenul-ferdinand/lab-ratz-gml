@@ -12,7 +12,7 @@ globalvar window_width, window_height;
 window_width = view_width * window_scale;
 window_height = view_height * window_scale;
 // Set the window size
-window_set_size(window_width, window_height);
+//window_set_size(window_width, window_height);
 alarm[0] = 1;
 // Resize the application surface
 surface_resize(application_surface, window_width, window_height);

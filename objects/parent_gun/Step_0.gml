@@ -1,4 +1,4 @@
-if (holder == noone) exit;
+if (holder == noone) or (game_stop) exit;
 
 var dir = point_direction(x, y, mouse_x, mouse_y);
 // Origin

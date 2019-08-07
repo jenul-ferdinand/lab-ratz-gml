@@ -1,4 +1,4 @@
-if (holder == noone) exit;
+if (holder == noone) or (game_stop) exit;
 // Gun is drawn in the player draw event!
 
 // Laser
@@ -38,7 +38,8 @@ else if (flash_light) and (flash_light_toggle)
 
 	gpu_set_blendmode(bm_subtract);
 	surface_set_target(light);
-
+	buffer_x = lengthdir_x(0, dir);
+	buffer_y = lengthdir_y(0, dir);
 	draw_triangle_colour
 	(
 	    (x-2) + buffer_x - camera_get_view_x(view),

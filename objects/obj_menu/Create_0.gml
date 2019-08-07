@@ -57,7 +57,7 @@ ds_menu_difficulty = scr_create_menu_page
 ds_menu_graphics = scr_create_menu_page
 (
 	["RESOLUTION",		menu_type.shift,			scr_change_resolution,		0,		["1024 x 576", "1280 x 720", "1366 x 768", "1600 x 900", "1920 x 1080"]],
-	["WINDOW MODE",		menu_type.toggle,			scr_change_window_mode,		1,		["FULLSCREEN", "WINDOWED"]],
+	["WINDOW MODE",		menu_type.toggle,			scr_change_window_mode,		0,		["FULLSCREEN", "WINDOWED"]],
 	["BACK",			menu_type.page_transfer,	menu_page.settings],
 );
 

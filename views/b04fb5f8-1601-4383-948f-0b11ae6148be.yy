@@ -1,0 +1,18 @@
+{
+    "id": "b04fb5f8-1601-4383-948f-0b11ae6148be",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "b04fb5f8-1601-4383-948f-0b11ae6148be",
+    "children": [
+        "99279719-955a-4388-9f38-573e1a57c525",
+        "cfee9efb-c066-4dfd-b146-8ac3bad8077c",
+        "005d4033-0996-46b1-846a-b526582c253b",
+        "d92ec05b-b04f-4aa9-b739-74a628ea38df",
+        "8f174264-74a6-4d78-8346-e49978e63c09",
+        "dbe23773-9ea0-4aeb-9243-66c0ad13ea15"
+    ],
+    "filterType": "GMSound",
+    "folderName": "Guns",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

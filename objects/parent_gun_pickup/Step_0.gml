@@ -1,3 +1,5 @@
+if (game_stop) exit;
+
 if (instance_place(x, y, obj_player)) and (obj_player.holding == undefined) and (!unpickable)
 {
 	instance_change(transfer, true);
