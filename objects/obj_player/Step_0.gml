@@ -80,5 +80,6 @@ if (hp < 0)
 	game_restart();
 	hp = 0;
 }
+hp = clamp(hp, 0, 100);
 
 

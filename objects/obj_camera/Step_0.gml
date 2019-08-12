@@ -14,6 +14,12 @@ if (instance_exists(following))
 	// Figure out the camera x and y position
 	var cx = camera_get_view_x(view);
 	var cy = camera_get_view_y(view);
+	// Shake
+	cx += random_range(-shake, shake);
+	cy += random_range(-shake, shake);
+	//cx = clamp(cx, 0, view_width*zoom);
+	//cy = clamp(cy, 0, view_height*zoom);
+	shake *= 0.9;
 	// Interpolation Magnitude (higher = faster)
 	var mag = 0.1;
 	// Application to the camera view position with interpolated smoothing

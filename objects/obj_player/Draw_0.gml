@@ -7,7 +7,7 @@ draw_self();
 // Gun
 with (parent_gun) 
 {
-	if (!destroy) and (other.holding != undefined)
+	if (!destroy) and (other.holding != undefined) and (state != "Dropped")
 	{
 		draw_sprite_ext
 		(

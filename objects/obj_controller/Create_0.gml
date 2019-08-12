@@ -1,4 +1,5 @@
 instance_create_depth(x, y, -9999, obj_console);
+cursor_sprite = spr_crosshair;
 
 #macro RIGHT 0
 #macro UP 1

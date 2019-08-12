@@ -9,7 +9,11 @@
         "005d4033-0996-46b1-846a-b526582c253b",
         "d92ec05b-b04f-4aa9-b739-74a628ea38df",
         "8f174264-74a6-4d78-8346-e49978e63c09",
-        "dbe23773-9ea0-4aeb-9243-66c0ad13ea15"
+        "dbe23773-9ea0-4aeb-9243-66c0ad13ea15",
+        "e84c2b46-aa89-4f11-8eb7-50eceff6cac0",
+        "6f67518c-677b-43ec-8056-41161624ee87",
+        "2c39d5f6-b730-4ecd-9505-42d02aa9d066",
+        "eb607ed4-eaa0-4ac5-be3c-dfd4f9f692f8"
     ],
     "filterType": "GMSound",
     "folderName": "Guns",

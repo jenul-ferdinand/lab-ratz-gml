@@ -1,14 +1,16 @@
-if (game_stop) exit;
+if (game_stop) or (pause) exit;
 
 if (hp <= 0) { instance_destroy(); }
 if (direction > 120) and (direction < 240) { image_xscale = -1 } else { image_xscale = 1; }
+if (gun_dir > 120) and (gun_dir < 240) { gun_yscale = -1 } else { gun_yscale = 1; }
 
 // Artificial Intelligence
-var player_distance = point_distance(x, y, target.x, target.y);
-var player_direction = point_direction(x, y, target.x, target.y);
+player_distance = point_distance(x, y, target.x, target.y);
+player_direction = point_direction(x, y, target.x, target.y);
+
 switch (state)
 {
-	case "Idle":
+	case state_type.idle:
 		// Arbitrary judgement
 		counter++;
 		if (counter >= idle_time)
@@ -17,7 +19,7 @@ switch (state)
 			switch (flip)
 			{
 				case 0:
-					state = "Wander";
+					state = state_type.wander;
 					counter = 0;
 					break;
 				
@@ -29,9 +31,10 @@ switch (state)
 		
 		// Animation
 		sprite_index = sprite_idle;
+		gun_dir = dir;
 		break;
 		
-	case "Wander":
+	case state_type.wander:
 		// Application of movement
 		#region Collisions
 		if (place_meeting(x + hspd, y, colliding))
@@ -69,52 +72,58 @@ switch (state)
 					break;
 					
 				case 1: 
-					state = "Idle";
+					state = state_type.idle;
 					counter = 0;
 					break;
 			}
 		}
 		
 		// Bootstrap states
-		if (player_distance < chase_radius) { state = "Chase"; } 
+		if (player_distance < chase_radius) { state = state_type.chase; } 
 		
 		// Animation
 		sprite_index = sprite_run;
+		gun_dir = dir;
 		break;
 		
-	case "Chase":
+	case state_type.chase:
+		
 		// Movement 
 		mp_potential_step_object(target.x, target.y, chase_speed, colliding);
 		
 		// Switching states
-		if (player_distance < shoot_radius) { state = "Shoot"; }
-		if (player_distance > chase_radius) { state = "Idle"; }
+		if (player_distance < shoot_radius) { state = state_type.shoot; }
+		if (player_distance > chase_radius) { state = state_type.idle; }
 		
 		// Animation
 		sprite_index = sprite_run;
+		gun_dir = player_direction;
 		break;
 		
-	case "Approach":
+	case state_type.approach:
+		
 		// Move
 		mp_potential_step_object(target.x, target.y, chase_speed, colliding);
 		
 		// Bootstrap state
-		if (player_distance < chase_radius) { state = "Chase"; }
+		if (player_distance < chase_radius) { state = state_type.chase; }
 		else 
 		{
 			counter++;
 			if (counter >= approach_time) 
 			{
-				state = "Idle";	
+				state = state_type.idle;	
 				counter = 0;
 			}
 		}
 		
 		// Animation
 		sprite_index = sprite_run;
+		gun_dir = player_direction;
 		break;
 		
-	case "Shoot":
+	case state_type.shoot:
+		gun_dir = player_direction;
 		// Cooldown
 		counter++;
 		if (counter >= shoot_cooldown)
@@ -130,7 +139,7 @@ switch (state)
 			var shoot_dir = player_direction;
 			var x_buffer = lengthdir_x(bullet_buffer, shoot_dir);
 			var y_buffer = lengthdir_y(bullet_buffer, shoot_dir);
-			var inst = instance_create_layer(x + x_buffer, (y-gun_ybuffer) + y_buffer, "Instances", bullet_index);
+			var inst = instance_create_layer(x + x_buffer, (y-gun_ybuffer) + y_buffer, "instances", bullet_index);
 			inst.direction = shoot_dir;
 			inst.image_angle = inst.direction;
 			inst.speed = bullet_speed;
@@ -146,7 +155,7 @@ switch (state)
 		}
 		
 		// Bootstrapping states
-		if (player_distance > shoot_radius) { state = "Chase"; }
+		if (player_distance > shoot_radius) { state = state_type.chase; }
 		
 		// Animation
 		sprite_index = sprite_idle;
@@ -154,7 +163,6 @@ switch (state)
 }
 
 // Bullet collision
-//mask_index = spr_enemy_bullet_mask;
 if (hit) 
 { 
 	// Damage
@@ -165,13 +173,13 @@ if (hit)
 	audio_play_sound(snd_hitmarker, 10, 0);
 	
 	// State search
-	if (state != "Chase") or (state != "Shoot") or (state != "Approach")
+	if (state != state_type.chase) or (state != state_type.shoot) or (state != state_type.approach)
 	{
-		state = "Approach";	
+		state = state_type.approach;	
 		
 		with (collision_circle(x, y, inclusion_radius, obj_enemy, false, true))
 		{
-			state = "Approach";	
+			state = state_type.approach;	
 		}
 	}
 	

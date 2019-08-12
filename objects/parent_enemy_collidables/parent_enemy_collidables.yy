@@ -1,5 +1,5 @@
 {
-    "id": "fd097464-8635-4c48-9d6d-4be554ba388a",
+    "id": "2bb34e21-d4b9-4bbb-96b9-778041145d5b",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "parent_enemy_collidables",
@@ -8,7 +8,7 @@
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "3bca64b1-d4e8-4a66-8ace-140f3fad23ba",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

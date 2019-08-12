@@ -11,7 +11,7 @@ if (!console_open) exit;
 if (pause) console_open = false; 
 
 // Adding text
-if (keyboard_check(vk_anykey)) and (string_length(console_text) < 20)
+if (keyboard_check(vk_anykey)) and (string_length(console_text) < 70)
 {
 	console_text += string(keyboard_string);
 	keyboard_string = "";

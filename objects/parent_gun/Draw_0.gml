@@ -1,5 +1,11 @@
-if (holder == noone) or (game_stop) exit;
+if (game_stop) exit;
 // Gun is drawn in the player draw event!
+if (state == "Dropped") 
+{
+	draw_sprite_ext(sprite, image_index, x, y, 1, shadow_yscale, 0, shadow_colour, shadow_alpha);
+	var hover = scr_wave(y-hover_y1, y-hover_y2, 1, 0);
+	draw_sprite(sprite, image_index, x, hover);
+}
 
 // Laser
 var dir = point_direction(x, y, mouse_x, mouse_y);
@@ -62,7 +68,7 @@ if (muzzle_flash)
 {
 	buffer_x = lengthdir_x(bullet_buffer + 3, dir);
 	buffer_y = lengthdir_y(bullet_buffer + 3, dir);
-	
+	// Flash
 	draw_sprite_ext
 	(
 		spr_muzzle_flash, 
@@ -75,5 +81,6 @@ if (muzzle_flash)
 		random_range(0.5, 1), 
 	);
 	
+	// Reset
 	muzzle_flash = false;
 }
