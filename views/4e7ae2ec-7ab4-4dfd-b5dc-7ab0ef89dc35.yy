@@ -4,6 +4,10 @@
     "mvc": "1.1",
     "name": "4e7ae2ec-7ab4-4dfd-b5dc-7ab0ef89dc35",
     "children": [
+        "e0d2a79d-f1d7-448a-b858-4d289a138f17",
+        "2ccf8b13-f541-4ad6-a101-12a0c6fec259",
+        "eacdf578-e761-4c66-8871-56dcdc8e8881",
+        "54aa02d7-3780-4dc2-9add-8db25fa50d9c",
         "49a4b50d-2e5e-4d15-95c8-ed03bcd13fb7",
         "d30d1ecc-fcd1-4b0a-8734-4b18801fe055",
         "9c91bd59-31ac-42b9-9062-80fced1d0151",
@@ -16,10 +20,13 @@
         "e8d6660c-18ee-4ee3-ba41-ccdceef81bdd",
         "55418080-a3f7-487c-a372-4aacc3759fb8",
         "52fc5661-692e-48c8-9ad9-5df58c4b2587",
-        "98618442-2813-461c-8558-610facb66f4c"
+        "10a48fc4-f45a-4151-966b-1cf9de957005",
+        "594f8551-a53d-4647-959e-b442e5a7be07",
+        "275b1a61-6fa7-4cb6-8af0-5b2fcf708e36",
+        "5a0b5470-9f93-4c0c-a12e-66246f2a652f"
     ],
     "filterType": "GMObject",
-    "folderName": "Guns",
+    "folderName": "Items",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

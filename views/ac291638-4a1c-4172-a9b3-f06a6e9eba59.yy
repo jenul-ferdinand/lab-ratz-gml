@@ -6,7 +6,8 @@
     "children": [
         "75fb622a-590c-4ed0-9b3d-5cb95932a6f7",
         "7b5ca3a6-15b9-44be-9abb-82436c4a290f",
-        "239aaf38-707a-496c-a9a6-1d80f6a42d75"
+        "239aaf38-707a-496c-a9a6-1d80f6a42d75",
+        "c26f04e9-e176-4ac8-9b50-8a606b482388"
     ],
     "filterType": "GMSprite",
     "folderName": "Particles",

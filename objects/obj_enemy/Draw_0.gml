@@ -63,3 +63,14 @@ if (state == state_type.approach) or (state == state_type.chase) or (state == st
 	surface_reset_target();
 	gpu_set_blendmode(bm_normal);
 }
+
+// Lighting
+scr_double_circle_lighting(
+	0, 
+	0, 
+	lighting_inner_colour, 
+	lighting_outer_colour, 
+	lighting_inner_radius, 
+	lighting_outer_radius,
+	lighting_shake_amount,
+);

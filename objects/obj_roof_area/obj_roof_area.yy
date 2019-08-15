@@ -5,7 +5,7 @@
     "name": "obj_roof_area",
     "eventList": [
         {
-            "id": "141878bb-b6c7-4b78-9334-bac018a4737d",
+            "id": "b7769fac-e34a-4c31-8408-81a92686811d",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,

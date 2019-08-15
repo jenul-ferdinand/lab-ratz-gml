@@ -1,12 +1,4 @@
 randomise();
-enum state_type
-{
-	idle,
-	wander,
-	approach,
-	chase, 
-	shoot,
-}
 
 var gun_choose = choose(
 	gun_type.ak47,
@@ -52,7 +44,7 @@ gun_alpha = 1;
 gun_imageblend = c_white;
 gun_sprite = pick[? "sprite"];
 shoot_cooldown = pick[? "enemy_firerate"];
-shoot_sound = pick[? "sound_shoot"];
+
 
 // Flash
 flash_alpha = 0;
@@ -60,13 +52,29 @@ flash_alpha_max = 0.75;
 flash_colour = c_white;
 flash_reduction = 0.05;
 
+// Lighting
+lighting_inner_colour = make_colour_rgb(6, 6, 6);
+lighting_outer_colour = make_colour_rgb(3, 3, 3);
+lighting_inner_radius = 20;
+lighting_outer_radius = 40;
+lighting_shake_amount = 1;
+
 // Flashlight
 flash_light_fov = 35;
 flash_light_toggle = false;
 flash_light_ybuffer = 8;
 flash_light_distance = shoot_radius;
-flash_light_brightness = c_ltgray;
+flash_light_brightness = make_colour_rgb(74, 74, 74);
 
 // Sprite
 sprite_idle = spr_enemy_scientist;
 sprite_run = spr_enemy_scientist_run;
+
+// Audio
+sound_gain = 0.1;
+shoot_sound = pick[? "sound_shoot"];
+emitter_min = 32;
+emitter_max = 64;
+emitter = audio_emitter_create();
+audio_falloff_set_model(audio_falloff_exponent_distance);
+audio_emitter_falloff(emitter, emitter_min, emitter_max, 1)

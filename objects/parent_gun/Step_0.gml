@@ -1,4 +1,4 @@
-if (game_stop) exit;
+if (game_stop) and (holding != parent_gun) exit;
 
 // Destroy
 if (destroy) { instance_destroy(); }
@@ -77,7 +77,7 @@ switch (state)
 				}
 				
 				// Screen shake
-				shake = 5;
+				shake = recoil/2;
 				
 				// Muzzle flash activate
 				if (muzzle_flash == false) { muzzle_flash = true; } 
@@ -175,6 +175,7 @@ switch (state)
 	
 	#region Dropped
 	case "Dropped":
+		image_angle = 0;
 		// Pickup
 		if (instance_place(x, y, obj_player)) and (obj_player.holding == undefined) and (!unpickable)
 		{
@@ -200,24 +201,21 @@ switch (state)
 			// Ease out
 			drop_spd *= 0.9;
 			#region Collisions
-			for (var i = 0; i < array_length_1d(colliding); i++)
+			if (place_meeting(x + hspd, y, parent_environment))
 			{
-				if (place_meeting(x + hspd, y, colliding[i]))
+				while (!place_meeting(x + sign(hspd), y, parent_environment))
 				{
-					while (!place_meeting(x + sign(hspd), y, colliding[i]))
-					{
-						x += sign(hspd);
-					}
-					hspd = lengthdir_x(1, player_direction);
+					x += sign(hspd);
 				}
-				if (place_meeting(x, y + vspd, colliding[i]))
+				hspd = lengthdir_x(1, player_direction);
+			}
+			if (place_meeting(x, y + vspd, parent_environment))
+			{
+				while (!place_meeting(x, y + sign(vspd), parent_environment))
 				{
-					while (!place_meeting(x, y + sign(vspd), colliding[i]))
-					{
-						y += sign(vspd);
-					}	
-					vspd = lengthdir_y(1, player_direction);
-				}
+					y += sign(vspd);
+				}	
+				vspd = lengthdir_y(1, player_direction);
 			}
 			#endregion
 			// Apply movement

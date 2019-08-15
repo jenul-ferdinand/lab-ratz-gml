@@ -22,6 +22,7 @@ bind_reload = ord("R");
 // Audio
 audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_soundeffects);
-//audio_play_sound(snd_soundtrack, 0, 0);
 // Create gun stats
 scr_guns_stats();
+
+godmode = true;

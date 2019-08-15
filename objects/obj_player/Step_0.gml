@@ -82,4 +82,7 @@ if (hp < 0)
 }
 hp = clamp(hp, 0, 100);
 
+// Audio
+audio_listener_position(x, y-10, 0);
+
 

@@ -1,13 +1,25 @@
 if (game_stop) or (pause) exit;
 
-if (hp <= 0) { instance_destroy(); }
+// Health
+if (hp <= 0) { 
+	// Create floating points
+	var points = instance_create_layer(x, y, "particles", obj_floating_points);
+	points.amount = 200;
+	
+	// Create dead body
+	instance_create_layer(x, y, "instances", obj_enemy_dead);
+	
+	// Destroy
+	instance_destroy(); 
+}
+
+// Direction flipping
 if (direction > 120) and (direction < 240) { image_xscale = -1 } else { image_xscale = 1; }
 if (gun_dir > 120) and (gun_dir < 240) { gun_yscale = -1 } else { gun_yscale = 1; }
 
 // Artificial Intelligence
 player_distance = point_distance(x, y, target.x, target.y);
 player_direction = point_direction(x, y, target.x, target.y);
-
 switch (state)
 {
 	case state_type.idle:
@@ -126,12 +138,15 @@ switch (state)
 		gun_dir = player_direction;
 		// Cooldown
 		counter++;
-		if (counter >= shoot_cooldown)
+		
+		if (counter >= shoot_cooldown) and (!collision_line(x, y, obj_player.x, obj_player.y, parent_environment, false, false))
 		{
-			// Sound effect
+			// Sound
 			if (!gunshot_played)
 			{
-				audio_play_sound(shoot_sound, 0, 0);
+				audio_emitter_position(emitter, x, y-gun_ybuffer, 0);
+				var sound = audio_play_sound_on(emitter, shoot_sound, 0, 0);
+				audio_sound_gain(sound, sound_gain, 0);
 				gunshot_played = true;
 			}
 			

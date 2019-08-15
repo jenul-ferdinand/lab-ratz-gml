@@ -4,7 +4,6 @@ if (keyboard_check_pressed(vk_escape))
 	pause = !pause;
 	game_stop = !game_stop;
 }
-
 if (pause)
 {
 	game_stop = true;	
@@ -12,4 +11,16 @@ if (pause)
 else
 {
 	game_stop = false;	
+}
+
+// God mode
+if (godmode)
+{
+	obj_player.hp = 100;	
+}
+
+// Ambient sounds
+if (!audio_is_playing(snd_ambient_1))
+{
+	audio_play_sound(snd_ambient_1, 0, 0);
 }
