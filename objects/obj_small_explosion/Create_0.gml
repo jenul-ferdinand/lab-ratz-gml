@@ -6,7 +6,7 @@ image_yscale = image_xscale;
 
 // Timings
 counter = 0;
-counter_time = 4;
+counter_time = 2;
 
 // Lighting
 lighting_inner_colour = c_white;

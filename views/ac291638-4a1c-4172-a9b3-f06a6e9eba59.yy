@@ -5,9 +5,10 @@
     "name": "ac291638-4a1c-4172-a9b3-f06a6e9eba59",
     "children": [
         "75fb622a-590c-4ed0-9b3d-5cb95932a6f7",
-        "7b5ca3a6-15b9-44be-9abb-82436c4a290f",
-        "239aaf38-707a-496c-a9a6-1d80f6a42d75",
-        "c26f04e9-e176-4ac8-9b50-8a606b482388"
+        "c26f04e9-e176-4ac8-9b50-8a606b482388",
+        "d854ea04-7c8f-44a7-b8c7-47e5688cb505",
+        "67ceac30-ecc4-4a4b-811a-d1bfd398e2fc",
+        "58c26d06-d8c4-4dab-a8b5-4f6faecac914"
     ],
     "filterType": "GMSprite",
     "folderName": "Particles",

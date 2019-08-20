@@ -6,7 +6,8 @@ cursor_sprite = spr_crosshair;
 #macro LEFT 2
 #macro DOWN 3
 // Binds
-globalvar pause, game_stop, bind_drop, bind_flashlight, bind_revert, bind_enter, bind_left, bind_right, bind_up, bind_down, bind_shoot, bind_reload;
+globalvar points, pause, game_stop, bind_drop, bind_flashlight, bind_revert, bind_enter, bind_left, bind_right, bind_up, bind_down, bind_shoot, bind_reload;
+points = 0;
 pause = true;
 game_stop = false;
 bind_drop = ord("Q");
@@ -25,4 +26,4 @@ audio_group_load(audiogroup_soundeffects);
 // Create gun stats
 scr_guns_stats();
 
-godmode = true;
+godmode = false;

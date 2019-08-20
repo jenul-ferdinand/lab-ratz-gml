@@ -1,0 +1,29 @@
+// Dash at the player
+mp_potential_step_object(target.x, target.y, dash_speed, colliding);
+		
+// Player damage and knockback
+if (player_distance < melee_radius) and (!dashed)
+{
+	with (obj_player)
+	{
+		hp -= other.melee_damage;
+		force_dir = other.player_direction;
+		force_applied = other.knockback_power;
+	}
+			
+	// Reset
+	dashed = true;
+}
+		
+// Create ghosts
+var ghost = instance_create_layer(x, y, "instances", obj_xenomorph_ghost);
+ghost.image_xscale = image_xscale;
+ghost.fade_speed = ghost_fade_speed;
+		
+// Switching states
+if (player_distance > dash_radius) { state = "Chase"; }
+if (player_distance > chase_radius) { state = "Wander"; }
+if (player_distance < retreat_radius) and (dashed) { state = "Retreat"; }
+		
+// Animation
+sprite_index = sprite_run;

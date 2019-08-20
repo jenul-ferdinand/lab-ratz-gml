@@ -1,4 +1,5 @@
 creator = undefined;
+damage = undefined;
 destroy = false;
 // Lighting
 lighting_inner_colour = c_white;

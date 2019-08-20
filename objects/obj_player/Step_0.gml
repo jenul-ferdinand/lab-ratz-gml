@@ -35,7 +35,7 @@ hspd = lengthdir_x(len, dir) - hspd_force;
 vspd = lengthdir_y(len, dir) + vspd_force;
 
 #region Collisions
-var collisions = [obj_wall_bottom, obj_wall_top];
+var collisions = [obj_wall_bottom, obj_wall_top, obj_pod, obj_pod_broken, parent_enemy, obj_wood_table];
 for (var i = 0; i < array_length_1d(collisions); i++)
 {
 	if (place_meeting(x + hspd, y, collisions[i]))

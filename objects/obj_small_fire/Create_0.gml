@@ -1,3 +1,7 @@
+scale = 1;
+image_xscale = choose(-scale, scale)
+image_speed = 1;
+
 // Audio
 emitter_min = 32;
 emitter_max = 64;

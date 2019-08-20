@@ -72,6 +72,7 @@ reload_played = false;
 reload_counter = 0;
 reload_counter_start = false;
 mag_max = mag;
+ammo_max = ammo;
 mag_save = undefined;
 
 // Lighting

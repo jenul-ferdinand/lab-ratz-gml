@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_pod",
     "eventList": [
-        
+        {
+            "id": "e45f4cb6-8784-4403-9149-d5bb9dc39548",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "a12f2ec5-cbda-43f4-a5d4-f6d9bcbb0253"
+        }
     ],
     "maskSpriteId": "9916bf54-ab57-421f-bcd0-11b736ec0075",
     "overriddenProperties": null,

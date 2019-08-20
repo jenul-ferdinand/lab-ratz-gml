@@ -35,7 +35,9 @@ switch (state)
 			if (mag != 0)
 			{
 				// Audio
-				audio_play_sound(sound_shoot, 10, false);
+				var _audio_shoot = audio_play_sound(sound_shoot, 10, false);
+				audio_sound_gain(_audio_shoot, 0.5, 0);
+				
 		
 				for (var i = 0; i < bullet_amount; i++)
 				{
@@ -72,8 +74,11 @@ switch (state)
 				// Recoil push back player
 				with (obj_player)
 				{
-					force_dir = -inst.direction;
-					force_applied = other.recoil_push;
+					if (force_applied <= 0)
+					{
+						force_dir = -inst.direction;
+						force_applied = other.recoil_push;
+					}
 				}
 				
 				// Screen shake

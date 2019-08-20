@@ -1,3 +1,4 @@
+depth = -999;
 var mouse_direction = point_direction(x, y, mouse_x, mouse_y);
 var player_direction = point_direction(x, y, obj_player.x, obj_player.y);
 
@@ -10,12 +11,15 @@ switch (state)
 		if (image_angle > 90) and (image_angle < 270) { image_yscale = -1; } 
 		else { image_yscale = 1; }
 		
-		var door = instance_nearest(x, y, obj_door);
-		var door_distance = point_distance(x, y, door.x, door.y);
-		if (mouse_check_button_pressed(bind_shoot)) and (door_distance < 32) 
+		if (instance_exists(obj_door))
 		{
-			audio_play_sound(snd_hitmarker, 0, 0);
-			door.open = true;
+			var door = instance_nearest(x, y, obj_door);
+			var door_distance = point_distance(x, y, door.x, door.y);
+			if (mouse_check_button_pressed(bind_shoot)) and (door_distance < interact_distance) 
+			{
+				audio_play_sound(snd_hitmarker, 0, 0);
+				door.open = true;
+			}
 		}
 		
 		if (obj_player.holding != undefined)

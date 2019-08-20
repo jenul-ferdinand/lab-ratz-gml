@@ -6,7 +6,9 @@
     "children": [
         "993d00ee-ba72-4b56-9144-9262ff9d72ad",
         "66d240d1-6470-49d7-9c6e-e9ecf0031404",
-        "ac64252a-c23f-4bc5-ab9a-ae9b66c37fbc"
+        "ac64252a-c23f-4bc5-ab9a-ae9b66c37fbc",
+        "fa73af97-9c8a-446c-b3da-65bd7f2aaded",
+        "d573a4b6-5ef0-42d6-8fae-65c91debb80c"
     ],
     "filterType": "GMObject",
     "folderName": "Drawing",

@@ -18,3 +18,5 @@ shadow_colour = c_black;
 shadow_alpha = 0.4;
 hover_y1 = 10;
 hover_y2 = 18;
+
+interact_distance = 32;

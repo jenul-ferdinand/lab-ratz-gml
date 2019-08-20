@@ -13,6 +13,9 @@ enum gun_type
 	famas,
 	vector,
 	flaregun,
+	mp5,
+	rpg,
+	m2_2,
 }
 
 globalvar ds_gun;
@@ -38,7 +41,7 @@ ds_map_add(ds_gun[index], "bullet_spread",	8);
 ds_map_add(ds_gun[index], "laser_sight",	true);
 
 ds_map_add(ds_gun[index], "enemy_firerate", 24);
-ds_map_add(ds_gun[index], "enemy_damage",	10);
+ds_map_add(ds_gun[index], "enemy_damage",	6);
 ds_map_add(ds_gun[index], "enemy_bullet_speed", 2);
 ds_map_add(ds_gun[index], "enemy_shoot_radius", 200);
 #endregion
@@ -197,17 +200,17 @@ index = gun_type.ruger;
 ds_gun[index] = ds_map_create();
 ds_map_add(ds_gun[index], "object",			obj_ruger);
 ds_map_add(ds_gun[index], "sprite",			spr_ruger);
-ds_map_add(ds_gun[index], "mag",			6);
-ds_map_add(ds_gun[index], "ammo",			24);
-ds_map_add(ds_gun[index], "automatic",		true);
-ds_map_add(ds_gun[index], "reload_time",	room_speed * 1.5);
+ds_map_add(ds_gun[index], "mag",			9999999999);
+ds_map_add(ds_gun[index], "ammo",			0);
+ds_map_add(ds_gun[index], "automatic",		false);
+ds_map_add(ds_gun[index], "reload_time",	room_speed * 0.76);
 ds_map_add(ds_gun[index], "recoil",			4);
 ds_map_add(ds_gun[index], "recoil_push",	0.1);
 ds_map_add(ds_gun[index], "sound_shoot",	snd_desert_eagle);
 ds_map_add(ds_gun[index], "bullet_type",	obj_bullet);
 ds_map_add(ds_gun[index], "bullet_amount",	1);
-ds_map_add(ds_gun[index], "damage",			12);
-ds_map_add(ds_gun[index], "firerate",		6);
+ds_map_add(ds_gun[index], "damage",			17);
+ds_map_add(ds_gun[index], "firerate",		4);
 ds_map_add(ds_gun[index], "bullet_speed",	5);
 ds_map_add(ds_gun[index], "bullet_spread",	3);
 ds_map_add(ds_gun[index], "laser_sight",	true);
@@ -263,11 +266,11 @@ ds_map_add(ds_gun[index], "bullet_spread",	0);
 ds_map_add(ds_gun[index], "laser_sight",	true);
 
 ds_map_add(ds_gun[index], "enemy_firerate", 15);
-ds_map_add(ds_gun[index], "enemy_damage",	50);
+ds_map_add(ds_gun[index], "enemy_damage",	14);
 ds_map_add(ds_gun[index], "enemy_bullet_speed", 2);
 ds_map_add(ds_gun[index], "enemy_shoot_radius", 200);
 #endregion
-#region Ruger
+#region Flare Gun
 index = gun_type.flaregun;
 ds_gun[index] = ds_map_create();
 ds_map_add(ds_gun[index], "object",			obj_flaregun);
@@ -292,3 +295,81 @@ ds_map_add(ds_gun[index], "enemy_damage",	0);
 ds_map_add(ds_gun[index], "enemy_bullet_speed", 2);
 ds_map_add(ds_gun[index], "enemy_shoot_radius", 100);
 #endregion
+#region MP5-K
+index = gun_type.mp5;
+ds_gun[index] = ds_map_create();
+ds_map_add(ds_gun[index], "object",			obj_mp5);
+ds_map_add(ds_gun[index], "sprite",			spr_mp5);
+ds_map_add(ds_gun[index], "mag",			30);
+ds_map_add(ds_gun[index], "ammo",			90);
+ds_map_add(ds_gun[index], "automatic",		true);
+ds_map_add(ds_gun[index], "reload_time",	room_speed * 0.95);
+ds_map_add(ds_gun[index], "recoil",			6);
+ds_map_add(ds_gun[index], "recoil_push",	0.1);
+ds_map_add(ds_gun[index], "sound_shoot",	snd_acr300_shoot);
+ds_map_add(ds_gun[index], "bullet_type",	obj_bullet);
+ds_map_add(ds_gun[index], "bullet_amount",	1);
+ds_map_add(ds_gun[index], "damage",			20);
+ds_map_add(ds_gun[index], "firerate",		3);
+ds_map_add(ds_gun[index], "bullet_speed",	3);
+ds_map_add(ds_gun[index], "bullet_spread",	3);
+ds_map_add(ds_gun[index], "laser_sight",	true);
+
+ds_map_add(ds_gun[index], "enemy_firerate", 16);
+ds_map_add(ds_gun[index], "enemy_damage",	0);
+ds_map_add(ds_gun[index], "enemy_bullet_speed", 2);
+ds_map_add(ds_gun[index], "enemy_shoot_radius", 100);
+#endregion
+#region RPG
+index = gun_type.rpg;
+ds_gun[index] = ds_map_create();
+ds_map_add(ds_gun[index], "object",			obj_rpg);
+ds_map_add(ds_gun[index], "sprite",			spr_rpg);
+ds_map_add(ds_gun[index], "mag",			1);
+ds_map_add(ds_gun[index], "ammo",			4);
+ds_map_add(ds_gun[index], "automatic",		false);
+ds_map_add(ds_gun[index], "reload_time",	room_speed * 2);
+ds_map_add(ds_gun[index], "recoil",			10);
+ds_map_add(ds_gun[index], "recoil_push",	2);
+ds_map_add(ds_gun[index], "sound_shoot",	snd_aug_shoot);
+ds_map_add(ds_gun[index], "bullet_type",	obj_rpgbullet);
+ds_map_add(ds_gun[index], "bullet_amount",	1);
+ds_map_add(ds_gun[index], "damage",			25);
+ds_map_add(ds_gun[index], "firerate",		6);
+ds_map_add(ds_gun[index], "bullet_speed",	2);
+ds_map_add(ds_gun[index], "bullet_spread",	6);
+ds_map_add(ds_gun[index], "laser_sight",	false);
+
+ds_map_add(ds_gun[index], "enemy_firerate", 30);
+ds_map_add(ds_gun[index], "enemy_damage",	25);
+ds_map_add(ds_gun[index], "enemy_bullet",   obj_rpgbullet);
+ds_map_add(ds_gun[index], "enemy_bullet_speed", 1.15);
+ds_map_add(ds_gun[index], "enemy_shoot_radius", 80);
+#endregion
+#region M2-2
+index = gun_type.m2_2;
+ds_gun[index] = ds_map_create();
+ds_map_add(ds_gun[index], "object",			obj_m2_2);
+ds_map_add(ds_gun[index], "sprite",			spr_m2_2);
+ds_map_add(ds_gun[index], "mag",			50);
+ds_map_add(ds_gun[index], "ammo",			50);
+ds_map_add(ds_gun[index], "automatic",		true);
+ds_map_add(ds_gun[index], "reload_time",	room_speed * 2);
+ds_map_add(ds_gun[index], "recoil",			3);
+ds_map_add(ds_gun[index], "recoil_push",	0.1);
+ds_map_add(ds_gun[index], "sound_shoot",	snd_ak47_shoot);
+ds_map_add(ds_gun[index], "bullet_type",	obj_rpgbullet);
+ds_map_add(ds_gun[index], "bullet_amount",	1);
+ds_map_add(ds_gun[index], "damage",			10);
+ds_map_add(ds_gun[index], "firerate",		2);
+ds_map_add(ds_gun[index], "bullet_speed",	1);
+ds_map_add(ds_gun[index], "bullet_spread",	10);
+ds_map_add(ds_gun[index], "laser_sight",	false);
+
+ds_map_add(ds_gun[index], "enemy_firerate", 0);
+ds_map_add(ds_gun[index], "enemy_damage",	0);
+ds_map_add(ds_gun[index], "enemy_bullet",   obj_bullet);
+ds_map_add(ds_gun[index], "enemy_bullet_speed", 1);
+ds_map_add(ds_gun[index], "enemy_shoot_radius", 100);
+#endregion
+

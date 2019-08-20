@@ -13,6 +13,8 @@ else
 	game_stop = false;	
 }
 
+if (keyboard_check_pressed(ord("P"))) { game_restart(); } 
+
 // God mode
 if (godmode)
 {

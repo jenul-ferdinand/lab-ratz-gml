@@ -1,6 +1,5 @@
-if (creator != obj_enemy) or (!instance_exists(obj_enemy)) or (game_stop) exit;
-instance_create_layer(x, y, "particles", obj_small_explosion);
+if (creator != obj_scientist_white) or (game_stop) exit;
 // Damage player
-other.hp -= creator.damage;
+other.hp -= damage;
 // Destroy bullet
 instance_destroy();

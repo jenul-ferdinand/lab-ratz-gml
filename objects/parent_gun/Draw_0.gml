@@ -82,30 +82,15 @@ if (muzzle_flash)
 	);
 	
 	// Lighting
-	surface_set_target(light);
-	gpu_set_blendmode(bm_subtract);
-	var _shake = lighting_shake_amount;
-	// Outer Circle
-	draw_set_colour(lighting_outer_colour);
-	draw_circle
-	(
-		((x + buffer_x) + random_range(-_shake, _shake)) - camera_get_view_x(view),
-		(((y - 1) + buffer_y) + random_range(-_shake, _shake)) - camera_get_view_y(view),
-		lighting_outer_radius + random_range(-_shake, _shake),
-		false
+	scr_double_circle_lighting(
+		buffer_x,
+		buffer_y,
+		lighting_inner_colour,
+		lighting_outer_colour,
+		lighting_inner_radius,
+		lighting_outer_radius,
+		lighting_shake_amount,
 	);
-	// Inner Circle
-	draw_set_colour(lighting_inner_colour)
-	draw_circle
-	(
-		((x + buffer_x) + random_range(-_shake, _shake)) - camera_get_view_x(view),
-		(((y - 1) + buffer_y) + random_range(-_shake, _shake)) - camera_get_view_y(view),
-		lighting_inner_radius + random_range(-_shake, _shake),
-		false
-	);
-	gpu_set_blendmode(bm_normal);
-	surface_reset_target();
-
 	
 	// Reset
 	muzzle_flash = false;
