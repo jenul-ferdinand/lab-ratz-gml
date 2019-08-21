@@ -25,12 +25,11 @@ lighting_shake_amount = 1;
 lighting_height_buffer = 10;
 
 // Sprites
-normal_sprite = spr_player_normal;
-normal_sprite_run = spr_player_normal_run;
 radsuit_sprite = spr_player_radsuit;
 radsuit_sprite_run = spr_player_radsuit_run;
 sprite = radsuit_sprite;
 sprite_run = radsuit_sprite_run;
 
 // Audio
+hit_sfx = snd_hitmarker;
 audio_listener_orientation(0, 1, 0, 0, 0, 1);

@@ -25,7 +25,11 @@ switch (state)
 		gun_dir = player_direction;
 		break;
 	case "Shoot": 
-		scientist_shoot(); 
+		scientist_shoot(id); 
+		gun_dir = player_direction;
+		break;
+	case "Knockback":
+		scientist_knockback();
 		gun_dir = player_direction;
 		break;
 }

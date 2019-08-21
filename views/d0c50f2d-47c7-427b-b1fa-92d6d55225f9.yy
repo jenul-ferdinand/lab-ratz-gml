@@ -11,7 +11,7 @@
         "d573a4b6-5ef0-42d6-8fae-65c91debb80c"
     ],
     "filterType": "GMObject",
-    "folderName": "Drawing",
+    "folderName": "Effects",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

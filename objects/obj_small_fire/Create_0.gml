@@ -1,3 +1,5 @@
+randomise();
+
 scale = 1;
 image_xscale = choose(-scale, scale)
 image_speed = 1;

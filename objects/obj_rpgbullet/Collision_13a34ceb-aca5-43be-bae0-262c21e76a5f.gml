@@ -1,8 +1,11 @@
 // Inherit the parent event
 event_inherited();
 
-// Particles
+// Create the explosion
 var expl = instance_create_layer(x, y, "particles", obj_rpg_explosion);
 expl.creator = id;
 expl.last_direction = image_angle;
-particle.destroy = true;
+expl.target = undefined;
+
+// Destroy bullet particle
+if (instance_exists(bullet_particle)) { bullet_particle.destroy = true; }

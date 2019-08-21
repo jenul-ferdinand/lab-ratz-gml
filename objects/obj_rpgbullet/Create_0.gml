@@ -1,7 +1,9 @@
 event_inherited();
+bullet_creator = undefined;
+
 // Particle
-particle = instance_create_layer(x, y, "particles", obj_rpg_fire);
-particle.creator = id;
+bullet_particle = instance_create_layer(x, y, "particles", obj_rpg_fire);
+bullet_particle.creator = id;
 
 // Lighting
 lighting_inner_colour = make_colour_rgb(181, 145, 0);

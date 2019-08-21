@@ -2,7 +2,7 @@
 hp_draw = lerp(hp_draw, obj_player.hp, 0.1);
 var xx = 10, yy = 10;
 draw_sprite(spr_healthbar_back, 0, xx, yy);
-draw_sprite_ext(spr_healthbar_front, 0, xx + 45, yy, round(hp_draw)/100, 1, 0, c_white, 1); 
+draw_sprite_ext(spr_healthbar_front, 0, xx + 45, yy, ceil(hp_draw)/100, 1, 0, c_white, 1); 
 
 #region Ammo amount
 if (obj_player.holding != undefined) and (obj_player.holding != parent_keycard)

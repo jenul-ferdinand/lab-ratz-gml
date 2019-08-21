@@ -48,7 +48,7 @@ switch (state)
 					inst.direction = dir;
 					inst.image_angle = inst.direction;
 					inst.speed = bullet_speed;
-					inst.creator = obj_player;
+					inst.bullet_creator = obj_player;
 			
 					if (bullet_amount == 1) 
 					{ 

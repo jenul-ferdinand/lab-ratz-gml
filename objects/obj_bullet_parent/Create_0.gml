@@ -1,4 +1,4 @@
-creator = undefined;
+bullet_creator = undefined;
 damage = undefined;
 destroy = false;
 // Lighting

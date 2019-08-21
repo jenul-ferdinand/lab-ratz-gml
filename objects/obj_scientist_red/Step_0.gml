@@ -25,9 +25,19 @@ switch (state)
 		gun_dir = player_direction;
 		break;
 	case "Shoot": 
-		scientist_shoot(); 
+		scientist_shoot(id); 
 		gun_dir = player_direction;
 		break;
+}
+
+// RPG reloaded image index
+if (gun_sprite_index == 0) and (index_change)
+{
+	counter++
+	if (counter >= shoot_cooldown)
+	{
+		gun_sprite_index = 1;	
+	}
 }
 
 // Bullet collision

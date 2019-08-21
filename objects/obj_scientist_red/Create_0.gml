@@ -1,24 +1,17 @@
 randomise();
+event_inherited();
 
 // Choose weapon
 var gun_choose = choose(
 	gun_type.rpg,
 );
-var gun_map = ds_gun[gun_choose];
 
 // Init
-hit = false;
-hspd = 0;
-vspd = 0;
-counter = 0;
-state = "Idle";
-dir = random_range(0, 359);
-gun_dir = 0;
+scientist_init(gun_choose);
 
 // Stats
 hp = 100;
 target = obj_player;
-damage = gun_map[? "enemy_damage"];
 damage_resistance = 1;
 
 // A.I
@@ -29,29 +22,20 @@ wander_time = 30;
 wander_speed = 0.4;
 approach_time = room_speed * 10;
 inclusion_radius = 60;
-chase_radius = 100;
-shoot_radius = gun_map[? "enemy_shoot_radius"];
+chase_radius = shoot_radius * 1.25;
 
 // Bullet
 bullet_buffer = 18;
-bullet_speed = gun_map[? "enemy_bullet_speed"];
-bullet_index = gun_map[? "bullet_type"];
 
 // Gun
+index_change = true;
 gunshot_played = false;
 gun_ybuffer = 10;
 gun_xscale = 1;
 gun_yscale = 1;
 gun_alpha = 1;
 gun_imageblend = c_white;
-gun_sprite = gun_map[? "sprite"];
-shoot_cooldown = gun_map[? "enemy_firerate"];
-
-// Flash
-flash_alpha = 0;
-flash_alpha_max = 0.75;
-flash_colour = c_white;
-flash_reduction = 0.05;
+gun_sprite_index = 0;
 
 // Lighting
 lighting_inner_colour = make_colour_rgb(6, 6, 6);
@@ -75,7 +59,6 @@ sprite_run = spr_scientist_red_run;
 // Audio
 hit_sfx = snd_hitmarker;
 sound_gain = 0.1;
-shoot_sound = gun_map[? "sound_shoot"];
 emitter_min = 32;
 emitter_max = 64;
 emitter = audio_emitter_create();

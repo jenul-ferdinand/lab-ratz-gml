@@ -13,7 +13,8 @@
         "0fd4e1b9-69ca-4b48-b5bd-650b3396035b",
         "06e6c1f3-5cc7-457f-b4a5-3fbc60336678",
         "f9a82304-20bf-4f65-84ea-1f781ab3a889",
-        "63c02184-fe1b-43f3-b460-685c5e0f4124"
+        "63c02184-fe1b-43f3-b460-685c5e0f4124",
+        "55127ddb-233d-4ecb-94b6-a12186248f63"
     ],
     "filterType": "GMSprite",
     "folderName": "Scientist",
