@@ -85,7 +85,10 @@ switch (state)
 				shake = recoil/2;
 				
 				// Muzzle flash activate
-				if (muzzle_flash == false) { muzzle_flash = true; } 
+				if (do_muzzle_flash) 
+				{
+					if (muzzle_flash == false) { muzzle_flash = true; } 
+				}
 			}
 			else
 			{

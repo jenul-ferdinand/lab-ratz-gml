@@ -31,7 +31,7 @@ if (hits > 0)
 				state = "Knockback"
 				dir = other.last_direction;
 				//var _creator = other.bullet_creator;
-				//force_dir = _creator.shoot_dir;
+				force_dir = other.last_direction;
 				force_applied = 4;
 			}	
 		}	

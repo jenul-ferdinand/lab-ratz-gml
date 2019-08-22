@@ -767,6 +767,14 @@
             }
         },
         {
+            "Key": "6659937a-ffba-4a6c-b91f-6be64b2f416d",
+            "Value": {
+                "id": "a432645f-b7a3-4285-b544-dfd289df47d3",
+                "resourcePath": "objects\\obj_m2_2_bullet\\obj_m2_2_bullet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "66d240d1-6470-49d7-9c6e-e9ecf0031404",
             "Value": {
                 "id": "69958d92-3184-4b34-a1a2-e3ac68423ee7",
@@ -940,6 +948,14 @@
                 "id": "67df31be-de85-4273-ab54-b5ec1d23690e",
                 "resourcePath": "scripts\\scr_exit_game\\scr_exit_game.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7eae5b2e-a688-47af-9a02-96b4497e1220",
+            "Value": {
+                "id": "7c694b7d-89b7-4db4-889b-39dd1efd28f1",
+                "resourcePath": "sounds\\snd_nothing\\snd_nothing.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1295,6 +1311,14 @@
             }
         },
         {
+            "Key": "bb4220d0-d0ea-4437-9d83-b92f618ee821",
+            "Value": {
+                "id": "c14f338e-9874-4386-9af8-9fd5a03cfe98",
+                "resourcePath": "sprites\\spr_m2_2_fire\\spr_m2_2_fire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "bba51208-1359-4e8f-a49d-0723998a72b0",
             "Value": {
                 "id": "a05b04bb-a368-4211-89c4-86622fa7f14e",
@@ -1420,6 +1444,14 @@
                 "id": "0aea6093-f220-4c83-996e-9131c120b5c9",
                 "resourcePath": "objects\\obj_console\\obj_console.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "cabba0a2-f92e-4ecb-9a62-eb3af359f890",
+            "Value": {
+                "id": "2840c03f-611f-4831-b17f-d0de069cea7a",
+                "resourcePath": "sprites\\spr_m2_2_bullet\\spr_m2_2_bullet.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1611,6 +1643,14 @@
             "Value": {
                 "id": "dc9a43e8-e498-4752-8a1e-d641399f77d3",
                 "resourcePath": "objects\\obj_aug\\obj_aug.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e38bcde2-0c08-4230-af0a-a5cc1311f359",
+            "Value": {
+                "id": "dfe38bac-cfc2-4623-bd23-3075e695cd46",
+                "resourcePath": "objects\\obj_m2_2_fire\\obj_m2_2_fire.yy",
                 "resourceType": "GMObject"
             }
         },

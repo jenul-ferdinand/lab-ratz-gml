@@ -5,9 +5,7 @@ var _id = argument[0];
 
 // Cooldown
 counter++;
-var colliding = [parent_environment, parent_enemy];
-for (var i = 0; i < array_length_1d(colliding); i++) { var collide = colliding[i]; } 
-if (counter >= shoot_cooldown) and (!collision_line(x, y, obj_player.x, obj_player.y, collide, false, false))
+if (counter >= shoot_cooldown) and (!collision_line(x, y, obj_player.x, obj_player.y, parent_environment, false, false))
 {
 	// Sound
 	if (!gunshot_played)

@@ -357,12 +357,12 @@ ds_map_add(ds_gun[index], "automatic",		true);
 ds_map_add(ds_gun[index], "reload_time",	room_speed * 2);
 ds_map_add(ds_gun[index], "recoil",			3);
 ds_map_add(ds_gun[index], "recoil_push",	0.1);
-ds_map_add(ds_gun[index], "sound_shoot",	snd_ak47_shoot);
-ds_map_add(ds_gun[index], "bullet_type",	obj_rpgbullet);
+ds_map_add(ds_gun[index], "sound_shoot",	snd_nothing);
+ds_map_add(ds_gun[index], "bullet_type",	obj_m2_2_bullet);
 ds_map_add(ds_gun[index], "bullet_amount",	1);
-ds_map_add(ds_gun[index], "damage",			10);
-ds_map_add(ds_gun[index], "firerate",		2);
-ds_map_add(ds_gun[index], "bullet_speed",	1);
+ds_map_add(ds_gun[index], "damage",			8);
+ds_map_add(ds_gun[index], "firerate",		1);
+ds_map_add(ds_gun[index], "bullet_speed",	0.2);
 ds_map_add(ds_gun[index], "bullet_spread",	10);
 ds_map_add(ds_gun[index], "laser_sight",	false);
 

@@ -29,6 +29,7 @@ hover_y1 = 10;
 hover_y2 = 18;
 
 // Muzzle Flash
+do_muzzle_flash = true;
 muzzle_flash = false;
 
 // Flashlight
