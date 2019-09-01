@@ -1,11 +1,5 @@
 if (target == undefined) exit;
 
-// Increment lighing radius
-lighting_inner_radius += lighting_inner_radius_increase;
-lighting_outer_radius += lighting_outer_radius_increase;
-lighting_inner_radius = clamp(lighting_inner_radius, 0, lighting_inner_radius_max);
-lighting_outer_radius = clamp(lighting_outer_radius, 0, lighting_outer_radius_max);
-
 // Damage others
 var hit_damage = ds_list_create();
 var hits = instance_place_list(x, y, target, hit_damage, false);
@@ -27,10 +21,8 @@ if (hits > 0)
 				
 				// Change values
 				hp -= other.damage;
-				
 				state = "Knockback"
 				dir = other.last_direction;
-				//var _creator = other.bullet_creator;
 				force_dir = other.last_direction;
 				force_applied = 4;
 			}	

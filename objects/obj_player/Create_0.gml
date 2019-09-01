@@ -1,10 +1,10 @@
+randomise();
 // Values
 image_speed = 1;
-
-// Movement
 hspd = 0;
 vspd = 0;
 spd = 2;
+hit = false;
 
 // Knockback
 hspd_force = 0;

@@ -21,11 +21,13 @@ chase_speed = 0.78;
 wander_time = 30;
 wander_speed = 0.4;
 approach_time = room_speed * 10;
-inclusion_radius = 60;
 chase_radius = shoot_radius * 1.25;
+notify_radius = 60;
+notify_object = parent_enemy;
 
 // Bullet
 bullet_buffer = 18;
+bullet_spread = 4;
 
 // Gun
 index_change = true;
@@ -50,7 +52,7 @@ flash_light_fov = 35;
 flash_light_toggle = false;
 flash_light_ybuffer = 8;
 flash_light_distance = shoot_radius;
-flash_light_brightness = make_colour_rgb(74, 74, 74);
+flash_light_colour = make_colour_rgb(74, 74, 74);
 
 // Sprite
 sprite_idle = spr_scientist_red;

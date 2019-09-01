@@ -24,7 +24,6 @@ flash_reduction = 0.05;
 damage = gun_map[? "enemy_damage"];
 bullet_speed = gun_map[? "enemy_bullet_speed"];
 bullet_index = gun_map[? "bullet_type"];
-bullet_spread = gun_map[? "bullet_spread"];
 shoot_radius = gun_map[? "enemy_shoot_radius"];
 shoot_cooldown = gun_map[? "enemy_firerate"];
 shoot_sound = gun_map[? "sound_shoot"];

@@ -28,10 +28,14 @@ switch (state)
 		scientist_shoot(id); 
 		gun_dir = player_direction;
 		break;
+	case "Knockback":
+		scientist_knockback();
+		gun_dir = player_direction;
+		break;
 }
 
 // Bullet collision
-enemy_hit(damage_resistance, hit_sfx, true, parent_enemy);
+enemy_hit(damage_resistance, hit_sfx, true, true, notify_object, false, -1, -1);
 // Death
 enemy_death(200, obj_scientist_dead, sprite_idle, true);
 // Flash Reduction

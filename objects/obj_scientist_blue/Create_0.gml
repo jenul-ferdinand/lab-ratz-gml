@@ -13,16 +13,21 @@ scientist_init(gun_choose);
 hp = 100;
 target = obj_player;
 damage_resistance = 1;
+points_amount = 750;
+
+// Bullet
+bullet_spread = 4;
 
 // A.I
 colliding = parent_enemy_collidables;
 idle_time = 10;
-chase_speed = 1;
+chase_speed = 1.8;
 chase_radius = 128;
 wander_time = 30;
-wander_speed = 1;
+wander_speed = 1.2;
 approach_time = room_speed * 10;
-inclusion_radius = 128;
+notify_radius = 128;
+notify_object = parent_enemy;
 
 // Gun
 gunshot_played = false;
@@ -33,6 +38,7 @@ gun_alpha = 1;
 gun_imageblend = c_white;
 gun_sprite_index = 0;
 bullet_buffer = 18;
+bullet_amount = 2;
 
 // Lighting
 lighting_inner_colour = make_colour_rgb(6, 6, 6);
@@ -47,13 +53,14 @@ flash_light_fov = 35;
 flash_light_toggle = false;
 flash_light_ybuffer = 8;
 flash_light_distance = shoot_radius;
-flash_light_brightness = make_colour_rgb(74, 74, 74);
+flash_light_colour = make_colour_rgb(74, 74, 74);
 
 // Sprite
 sprite_idle = spr_scientist_blue;
 sprite_run = spr_scientist_blue_run;
 
 // Audio
+hit_sfx = snd_hitmarker;
 sound_gain = 0.1;
 emitter_min = 32;
 emitter_max = 64;

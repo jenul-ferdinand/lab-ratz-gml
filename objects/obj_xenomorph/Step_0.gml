@@ -32,10 +32,14 @@ switch (state)
 	case "Retreat":
 		xenomorph_retreat();
 		break;
+		
+	case "Knockback":
+		scientist_knockback();
+		break;
 }
 
 // Bullet collision
-enemy_hit(damage_resistance, sfx_hit, true, notify_object);
+enemy_hit(damage_resistance, hit_sfx, false, true, notify_object, false, -1, -1);
 
 // Health
 enemy_death(points_death, object_dead, sprite_idle, false);

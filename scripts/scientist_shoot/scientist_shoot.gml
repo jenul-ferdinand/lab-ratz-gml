@@ -39,24 +39,21 @@ if (counter >= shoot_cooldown) and (!collision_line(x, y, obj_player.x, obj_play
 		}
 		
 		// Bullet Amount
-		for (var i = 0; i < bullet_amount; i++)
+		if (bullet_amount <= 1) 
+		{ 
+			// Random Recoil
+			inst.direction += random_range(-bullet_spread, bullet_spread+1); 
+		}
+		else 
 		{
-			if (bullet_amount == 1) 
-			{ 
-				// Random Recoil
-				inst.direction += random_range(-bullet_spread, bullet_spread+1); 
-			}
-			else 
+			// Double Shot
+			var bspread;
+			switch (i)
 			{
-				// Double Shot
-				var bspread;
-				switch (i)
-				{
-					case 0: bspread = -bullet_spread; break;
-					case 1: bspread = bullet_spread; break;
-				}
-				inst.direction += bspread;
+				case 0: bspread = -bullet_spread; break;
+				case 1: bspread = bullet_spread; break;
 			}
+			inst.direction += bspread;
 		}
 	}
 	

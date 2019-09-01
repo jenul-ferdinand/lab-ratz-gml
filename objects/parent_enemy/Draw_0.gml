@@ -21,7 +21,7 @@ if (flash_alpha > 0)
 }
 
 // Flashlight
-if (flash_light)
+if (flash_light) and (!collision_line(x, y, obj_player.x, obj_player.y, parent_environment, false, false))
 {
 	if (state == "Approach") or (state == "Chase") or (state == "Shoot")
 	{
@@ -45,7 +45,7 @@ if (flash_light)
 		    (y-flash_light_ybuffer) + lengthdir_y(light_length, dir_l) - camera_get_view_y(view),
 		    (x) + lengthdir_x(light_length, dir_r) - camera_get_view_x(view),
 		    (y-flash_light_ybuffer) + lengthdir_y(light_length, dir_r) - camera_get_view_y(view),
-		    flash_light_brightness, 
+		    flash_light_colour, 
 			c_black, c_black, 
 			false
 		)

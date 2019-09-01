@@ -54,7 +54,7 @@ else if (flash_light) and (flash_light_toggle)
 	    (y-2) + lengthdir_y(light_length, dir_l) - camera_get_view_y(view),
 	    (x-2) + lengthdir_x(light_length, dir_r) - camera_get_view_x(view),
 	    (y-2) + lengthdir_y(light_length, dir_r) - camera_get_view_y(view),
-	    flash_light_brightness, 
+	    flash_light_colour, 
 		c_black, c_black, 
 		false
 	)

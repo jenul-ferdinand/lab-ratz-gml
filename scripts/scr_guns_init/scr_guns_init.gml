@@ -37,7 +37,7 @@ flash_light = false;
 flash_light_fov = 45;
 flash_light_toggle = false;
 flash_light_distance = 425;
-flash_light_brightness = c_ltgray;
+flash_light_colour = c_ltgray;
 
 // Lasersight
 laser_sight_toggle = false;
@@ -56,7 +56,8 @@ bullet = gun_map[? "bullet_type"];
 bullet_amount = gun_map[? "bullet_amount"];
 bullet_speed = gun_map[? "bullet_speed"];
 bullet_spread = gun_map[? "bullet_spread"];
-bullet_buffer = 18;
+bullet_buffer = gun_map[? "bullet_buffer"];
+bullet_vertex = gun_map[? "bullet_vertex"];
 bullet_spread_new = bullet_spread - 2;
 
 // Recoil

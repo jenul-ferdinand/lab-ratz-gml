@@ -12,3 +12,6 @@ expl.damage = gun_map[? "enemy_damage"];
 
 // Destroy bullet particle
 if (instance_exists(bullet_particle)) { bullet_particle.destroy = true; }
+
+// Destroy bullet
+instance_destroy();

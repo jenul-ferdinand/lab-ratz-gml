@@ -75,6 +75,12 @@ else
 }
 
 // Health
+if (hit)
+{
+	var hurt_sound = audio_play_sound(choose(snd_player_hurt_0, snd_player_hurt_1), 0, 0);
+	audio_sound_pitch(hurt_sound, random_range(0.9, 1.1));
+	hit = false;
+}
 if (hp < 0) 
 { 
 	game_restart();

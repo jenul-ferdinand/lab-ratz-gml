@@ -44,7 +44,7 @@ switch (state)
 					// Bullet
 					var buffer_x = lengthdir_x(bullet_buffer, dir);
 					var buffer_y = lengthdir_y(bullet_buffer, dir);
-					var inst = instance_create_layer(x + buffer_x, (y-1) + buffer_y, "instances", bullet);
+					var inst = instance_create_layer(x + buffer_x, (y - bullet_vertex) + buffer_y, "instances", bullet);
 					inst.direction = dir;
 					inst.image_angle = inst.direction;
 					inst.speed = bullet_speed;

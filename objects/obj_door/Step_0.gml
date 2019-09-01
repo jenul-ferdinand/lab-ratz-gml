@@ -1,3 +1,15 @@
+if (!keycard)
+{
+	lighting_inner_colour = make_colour_rgb(0, 176, 82);
+	lighting_outer_colour = make_colour_rgb(0, 105, 49);
+	if (point_distance(x, y, obj_player.x, obj_player.y) < 76) { open = true; } 
+}
+else
+{
+	lighting_inner_colour = make_colour_rgb(255, 0, 0);
+	lighting_outer_colour = make_colour_rgb(153, 0, 0);	
+}
+
 if (open) { open_anim = true; }
 if (open_anim)
 {
@@ -15,8 +27,6 @@ if (enterable)
 {
 	if (instance_place(x, y+1, obj_player))
 	{
-		room_goto_next();	
-		obj_player.x = goto_x;
-		obj_player.y = goto_y;
+		script_execute(transition, transfer, goal_x, goal_y);
 	}	
 }

@@ -12,7 +12,7 @@ var create_drop = argument[3];
 if (hp <= 0) 
 { 
 	// Create floating points
-	var _points = instance_create_layer(x, y, "particles", obj_floating_points);
+	var _points = instance_create_depth(x, y, -9999, obj_floating_points);
 	_points.amount = points_amount;
 	points += _points.amount;
 	
@@ -27,6 +27,8 @@ if (hp <= 0)
 			instance_create_layer(x, y, "instances", drops[random_range(0, array_length_1d(drops))]); 
 		}
 	}
+	
+	audio_play_sound(snd_808, 0, 0);
 	
 	// Destroy
 	instance_destroy(); 
