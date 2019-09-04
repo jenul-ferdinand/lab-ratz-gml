@@ -5,6 +5,7 @@ hspd = 0;
 vspd = 0;
 spd = 2;
 hit = false;
+counter = 0;
 
 // Knockback
 hspd_force = 0;
@@ -32,4 +33,6 @@ sprite_run = radsuit_sprite_run;
 
 // Audio
 hit_sfx = snd_hitmarker;
+footstep_time = 26;
+footstep_volume = 0.5;
 audio_listener_orientation(0, 1, 0, 0, 0, 1);

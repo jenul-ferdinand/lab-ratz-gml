@@ -11,6 +11,7 @@ object = gun_map[? "object"];
 sprite = gun_map[? "sprite"];
 damage = gun_map[? "damage"];
 sound_shoot = gun_map[? "sound_shoot"];
+room_id = room;
 
 // Dropped
 state = "Dropped";

@@ -169,6 +169,7 @@ switch (state)
 			if (keyboard_check_pressed(bind_drop))
 			{
 				state = "Dropped";
+				room_id = room;
 				drop = true;
 				unpickable = true;
 				holder = noone;
@@ -183,68 +184,71 @@ switch (state)
 	
 	#region Dropped
 	case "Dropped":
-		image_angle = 0;
-		// Pickup
-		if (instance_place(x, y, obj_player)) and (obj_player.holding == undefined) and (!unpickable)
+		if (room == room_id)
 		{
-			state = "Normal";
-			drop = false;
-			obj_player.holding = object;
-		
-			holder = obj_player;
-			hspd = 0;
-			vspd = 0;
-			drop_dir = undefined;
-			drop_spd = drop_spd_max;
-		}
-	
-		// Movement
-		if (drop)
-		{
-			// Direction
-			drop_dir = point_direction(x, y, mouse_x, mouse_y);
-			// Vector
-			hspd = lengthdir_x(drop_spd, drop_dir);
-			vspd = lengthdir_y(drop_spd, drop_dir);
-			// Ease out
-			drop_spd *= 0.9;
-			#region Collisions
-			if (place_meeting(x + hspd, y, parent_environment))
+			image_angle = 0;
+			// Pickup
+			if (instance_place(x, y, obj_player)) and (obj_player.holding == undefined) and (!unpickable)
 			{
-				while (!place_meeting(x + sign(hspd), y, parent_environment))
-				{
-					x += sign(hspd);
-				}
-				hspd = lengthdir_x(1, player_direction);
-			}
-			if (place_meeting(x, y + vspd, parent_environment))
-			{
-				while (!place_meeting(x, y + sign(vspd), parent_environment))
-				{
-					y += sign(vspd);
-				}	
-				vspd = lengthdir_y(1, player_direction);
-			}
-			#endregion
-			// Apply movement
-			x += hspd;
-			y += vspd;
-			// Stop
-			if (drop_spd <= 0)
-			{
+				state = "Normal";
 				drop = false;
+				obj_player.holding = object;
+			
+				holder = obj_player;
+				hspd = 0;
+				vspd = 0;
+				drop_dir = undefined;
 				drop_spd = drop_spd_max;
 			}
-		}
 	
-		// Un-pickable time
-		if (unpickable)
-		{
-			unpickable_counter++;
-			if (unpickable_counter >= unpickable_time)
+			// Movement
+			if (drop)
 			{
-				unpickable = false;
-				unpickable_counter = 0;
+				// Direction
+				drop_dir = point_direction(x, y, mouse_x, mouse_y);
+				// Vector
+				hspd = lengthdir_x(drop_spd, drop_dir);
+				vspd = lengthdir_y(drop_spd, drop_dir);
+				// Ease out
+				drop_spd *= 0.9;
+				#region Collisions
+				if (place_meeting(x + hspd, y, parent_environment))
+				{
+					while (!place_meeting(x + sign(hspd), y, parent_environment))
+					{
+						x += sign(hspd);
+					}
+					hspd = lengthdir_x(1, player_direction);
+				}
+				if (place_meeting(x, y + vspd, parent_environment))
+				{
+					while (!place_meeting(x, y + sign(vspd), parent_environment))
+					{
+						y += sign(vspd);
+					}	
+					vspd = lengthdir_y(1, player_direction);
+				}
+				#endregion
+				// Apply movement
+				x += hspd;
+				y += vspd;
+				// Stop
+				if (drop_spd <= 0)
+				{
+					drop = false;
+					drop_spd = drop_spd_max;
+				}
+			}
+	
+			// Un-pickable time
+			if (unpickable)
+			{
+				unpickable_counter++;
+				if (unpickable_counter >= unpickable_time)
+				{
+					unpickable = false;
+					unpickable_counter = 0;
+				}
 			}
 		}
 		break;

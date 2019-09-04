@@ -35,9 +35,9 @@ switch (state)
 }
 
 // Bullet collision
-enemy_hit(damage_resistance, hit_sfx, true, true, notify_object, false, -1, -1);
+enemy_hit(damage_resistance, hit_sfx, approach, notify, notify_object, false, -1, -1);
 // Death
-enemy_death(200, obj_scientist_dead, sprite_idle, true);
+enemy_death(death_points, death_object, sprite_idle, create_drop);
 // Flash Reduction
 if (flash_alpha > 0) 
 {

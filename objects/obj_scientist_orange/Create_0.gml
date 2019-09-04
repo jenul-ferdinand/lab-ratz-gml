@@ -13,6 +13,8 @@ scientist_init(gun_choose);
 hp = 100;
 target = obj_player;
 damage_resistance = 1;
+death_points = 500;
+death_object = obj_scientist_dead;
 
 // Bullet
 bullet_spread = 4;
@@ -24,7 +26,9 @@ chase_speed = 1;
 chase_radius = 128;
 wander_time = 30;
 wander_speed = 1;
+approach = true;
 approach_time = room_speed * 10;
+notify = true;
 notify_radius = 128;
 notify_object = parent_enemy;
 

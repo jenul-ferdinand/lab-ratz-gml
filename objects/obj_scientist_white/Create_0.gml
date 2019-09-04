@@ -13,6 +13,8 @@ scientist_init(gun_choose);
 hp = 100;
 target = obj_player;
 damage_resistance = 1;
+death_points = 200;
+death_object = obj_scientist_dead;
 
 // A.I
 colliding = parent_enemy_collidables;
@@ -21,7 +23,9 @@ chase_speed = 1;
 chase_radius = 128;
 wander_time = 30;
 wander_speed = 1;
+approach = true;
 approach_time = room_speed * 10;
+notify = true;
 notify_radius = 128;
 notify_object = parent_enemy;
 
@@ -68,5 +72,6 @@ audio_falloff_set_model(audio_falloff_exponent_distance);
 audio_emitter_falloff(emitter, emitter_min, emitter_max, 1);
 
 // Drops
-drops = [obj_ammobox, obj_medkit];
+create_drop = true;
+drops = [obj_ammobox, obj_medkit, obj_ak47, obj_famas];
 drop_chance = 46;

@@ -3,7 +3,7 @@ creator = undefined;
 bullet_creator = undefined;
 target = undefined;
 last_direction = undefined;
-damage = 100;
+damage = 200;
 others_hit = ds_list_create();
 
 // Lighting

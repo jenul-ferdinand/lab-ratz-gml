@@ -8,7 +8,7 @@ cursor_sprite = spr_crosshair;
 // Binds
 globalvar points, pause, game_stop, bind_drop, bind_flashlight, bind_revert, bind_enter, bind_left, bind_right, bind_up, bind_down, bind_shoot, bind_reload;
 points = 0;
-pause = true;
+pause = false;
 game_stop = false;
 bind_drop = ord("Q");
 bind_flashlight = ord("F");

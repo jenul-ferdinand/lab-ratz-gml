@@ -1,6 +1,6 @@
 if (game_stop) exit;
 // Gun is drawn in the player draw event!
-if (state == "Dropped") 
+if (state == "Dropped") and (room == room_id)
 {
 	draw_sprite_ext(sprite, image_index, x, y, 1, shadow_yscale, 0, shadow_colour, shadow_alpha);
 	var hover = scr_wave(y-hover_y1, y-hover_y2, 1, 0);
@@ -74,7 +74,7 @@ if (muzzle_flash)
 		spr_muzzle_flash, 
 		irandom_range(0,9), 
 		x + buffer_x, 
-		(y - 1) + buffer_y, 
+		(y - bullet_vertex) + buffer_y, 
 		.5, .5, 
 		random_range(0, 359), 
 		c_white, 

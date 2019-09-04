@@ -1,4 +1,4 @@
-spd = 15;
+spd = 30;
 right = 0;
 left = 0;
 stage_two = 0;
@@ -6,3 +6,4 @@ goal = undefined;
 goal_x = undefined;
 goal_y = undefined;
 script = false;
+buffer = 50;

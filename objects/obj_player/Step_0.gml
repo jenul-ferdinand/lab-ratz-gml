@@ -14,12 +14,10 @@ var len;
 if (x_input != 0) or (y_input != 0) 
 {
 	len = spd; 
-	sprite_index = sprite_run;
 } 
 else 
 { 
 	len = 0; 
-	sprite_index = sprite;
 } 
 
 // Force
@@ -62,9 +60,34 @@ x += hspd;
 y += vspd;
 #endregion
 
-// Facing direction
+if (hspd != 0) or (vspd != 0) 
+{
+	// Footsteps
+	counter++;
+	if (counter >= footstep_time)
+	{
+		var sound_type = choose(snd_footstep_1, snd_footstep_2, snd_footstep_3, snd_footstep_4);
+		if (!audio_is_playing(sound_type)) 
+		{ 
+			var footstep = audio_play_sound(sound_type, 0, 0); 
+			audio_sound_gain(footstep, footstep_volume, 0);
+		}
+		
+		counter = 0;
+	}	
+	
+	// Running animation
+	sprite_index = sprite_run;
+}
+else
+{
+	// Idle animation
+	sprite_index = sprite;
+}	
+
 if (hspd != 0) and (hspd_force == 0)
 { 
+	// Facing direction
 	image_xscale = sign(hspd); 
 }
 else
