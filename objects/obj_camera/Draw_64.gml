@@ -5,7 +5,7 @@ draw_sprite(spr_healthbar_back, 0, xx, yy);
 draw_sprite_ext(spr_healthbar_front, 0, xx + 45, yy, ceil(hp_draw)/100, 1, 0, c_white, 1); 
 
 #region Ammo amount
-if (obj_player.holding != undefined) and (obj_player.holding != parent_keycard)
+if (obj_player.holding == parent_gun) 
 {
 	var gun_ammo, gun_mag, gun_sprite, gun_holding, height_buffer, gun_x, gun_y, xx, yy, c, str;
 	with (obj_player) 
@@ -61,7 +61,7 @@ if (obj_player.holding != undefined) and (obj_player.holding != parent_keycard)
 }
 #endregion
 
-// Version text
+#region Version text
 draw_set_font(fnt_main);
 draw_set_halign(fa_right);
 	var c, str, xx, yy, buffer;
@@ -76,8 +76,9 @@ draw_set_halign(fa_right);
 		draw_text_colour(xx, yy, str, c,c,c,c, 1);
 draw_set_halign(fa_left);
 draw_set_font(-1);
+#endregion
 
-// Points Text
+#region Points Text
 draw_set_font(fnt_points);
 draw_set_halign(fa_right);
 	var c, str, xx, yy, buffer;
@@ -93,3 +94,4 @@ draw_set_halign(fa_right);
 		draw_text_colour(xx, yy, str, c,c,c,c, 1);
 draw_set_halign(fa_left);
 draw_set_font(-1);
+#endregion

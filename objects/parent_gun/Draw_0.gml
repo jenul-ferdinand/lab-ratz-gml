@@ -82,7 +82,7 @@ if (muzzle_flash)
 	);
 	
 	// Lighting
-	scr_double_circle_lighting(
+	double_circle_lighting(
 		buffer_x,
 		buffer_y,
 		lighting_inner_colour,

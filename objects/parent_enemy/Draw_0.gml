@@ -56,7 +56,7 @@ if (flash_light) and (!collision_line(x, y, obj_player.x, obj_player.y, parent_e
 }
 
 // Lighting
-scr_double_circle_lighting(
+double_circle_lighting(
 	0, 
 	0, 
 	lighting_inner_colour, 

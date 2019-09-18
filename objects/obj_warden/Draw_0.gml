@@ -17,7 +17,7 @@ if (state == "Shoot")
 }
 
 // Lighting
-scr_double_circle_lighting(
+double_circle_lighting(
 	0, 
 	-lighting_height_buffer, 
 	lighting_inner_colour, 

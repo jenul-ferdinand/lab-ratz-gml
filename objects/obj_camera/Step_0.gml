@@ -1,27 +1,8 @@
-// Set the camera's view size using the view width and height
-camera_set_view_size(view, view_width * zoom, view_height * zoom);
+// Smooth following target
+camera_follow();
+// Zooming in and out scripts
+camera_zoom_in();
+camera_zoom_out();
 
-if (instance_exists(following)) 
-{
-	// Follow the player always centered on the screen and clamped between the bounds
-	var x_min = following.x - (view_width/2) * zoom;
-	var y_min = following.y - (view_height/2) * zoom;
-	var x_max = room_width - (view_width * zoom);
-	var y_max = room_height - (view_height * zoom);
-	var xx = clamp(x_min, 0, x_max);
-	var yy = clamp(y_min, 0, y_max);
-	
-	// Figure out the camera x and y position
-	var cx = camera_get_view_x(view);
-	var cy = camera_get_view_y(view);
-	// Shake
-	cx += random_range(-shake, shake);
-	cy += random_range(-shake, shake);
-	//cx = clamp(cx, 0, view_width*zoom);
-	//cy = clamp(cy, 0, view_height*zoom);
-	shake *= 0.9;
-	// Interpolation Magnitude (higher = faster)
-	var mag = 0.1;
-	// Application to the camera view position with interpolated smoothing
-	camera_set_view_pos(view, lerp(cx, xx, mag), lerp(cy, yy, mag));
-}
+// Objective subtitles
+if (objective != undefined) { draw_subtitles = true; } else { draw_subtitles = false; }

@@ -10,7 +10,7 @@ hp = 100;
 damage_resistance = 0.5;
 knockback_power = 4;
 melee_damage = 15;
-dash_speed = 3
+dash_speed = 3;
 wander_speed = 1;
 points_death = 1000;
 

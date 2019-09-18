@@ -1,24 +1,5 @@
 /// @desc scr_guns_stats()
 
-enum gun_type
-{
-	ak47,
-	acr300,
-	desert_eagle,
-	ray_gun,
-	seneca,
-	aug,
-	ruger,
-	awp,
-	famas,
-	vector,
-	flaregun,
-	mp5,
-	rpg,
-	m2_2,
-	m1_grand,
-}
-
 globalvar ds_gun;
 var index;
 #region AK47
@@ -72,9 +53,9 @@ m[? "laser_sight"] = true
 m[? "bullet_buffer"] = 18
 m[? "bullet_vertex"] = 1
 
-m[? "enemy_firerate"] = 18
+m[? "enemy_firerate"] = 50
 m[? "enemy_damage"] = 8
-m[? "enemy_bullet_speed"] = 2
+m[? "enemy_bullet_speed"] = 1.8
 m[? "enemy_shoot_radius"] = 180
 #endregion
 #region Vector
@@ -268,9 +249,9 @@ m[? "laser_sight"] = false
 m[? "bullet_buffer"] = 11
 m[? "bullet_vertex"] = 1
 
-m[? "enemy_firerate"] = 15
+m[? "enemy_firerate"] = 37
 m[? "enemy_damage"] = 4
-m[? "enemy_bullet_speed"] = 2
+m[? "enemy_bullet_speed"] = 1.3
 m[? "enemy_shoot_radius"] = 160
 #endregion
 #region AWP
@@ -307,8 +288,8 @@ ds_gun[index] = ds_map_create();
 var m = ds_gun[index];
 m[? "object"] = obj_famas
 m[? "sprite"] = spr_famas
-m[? "mag"] = 28
-m[? "ammo"] = 112
+m[? "mag"] = 30
+m[? "ammo"] = 120
 m[? "automatic"] = true
 m[? "reload_time"] = room_speed * 0.9
 m[? "recoil"] = 3
@@ -318,14 +299,14 @@ m[? "bullet_type"] = obj_bullet
 m[? "bullet_amount"] = 1
 m[? "damage"] = 28
 m[? "firerate"] = 4
-m[? "bullet_speed"] = 5
+m[? "bullet_speed"] = 2.3
 m[? "bullet_spread"] = 5
 m[? "laser_sight"] = true
 m[? "bullet_buffer"] = 17
 m[? "bullet_vertex"] = 1
 
 m[? "enemy_firerate"] = 15
-m[? "enemy_damage"] = 14
+m[? "enemy_damage"] = 8
 m[? "enemy_bullet_speed"] = 2
 m[? "enemy_shoot_radius"] = 250
 #endregion

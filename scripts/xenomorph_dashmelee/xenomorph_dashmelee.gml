@@ -30,13 +30,6 @@ if (counter >= 2)
 if (player_distance > dash_radius) { state = "Chase"; }
 if (player_distance > chase_radius) { state = "Wander"; }
 if (player_distance < retreat_radius) and (dashed) { state = "Retreat"; }
-		
-// Audio
-if (!audio_is_playing(snd_xenomorph_hiss))
-{
-	var dash_sound = audio_play_sound(snd_xenomorph_hiss, 0, 0);
-	audio_sound_pitch(dash_sound, random_range(0.9, 1.1));
-}
 
 // Animation
 sprite_index = sprite_run;

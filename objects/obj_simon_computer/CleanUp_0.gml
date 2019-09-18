@@ -1,0 +1,1 @@
+ds_list_destroy(simon_list);

@@ -2,8 +2,8 @@ randomise();
 event_inherited();
 
 var gun_choose = choose(
-	gun_type.ak47,
-	gun_type.famas,
+	gun_type.ruger,
+	gun_type.acr300,
 );
 
 // Init
@@ -73,5 +73,5 @@ audio_emitter_falloff(emitter, emitter_min, emitter_max, 1);
 
 // Drops
 create_drop = true;
-drops = [obj_ammobox, obj_medkit, obj_ak47, obj_famas];
+drops = [obj_ammobox, obj_medkit];
 drop_chance = 46;

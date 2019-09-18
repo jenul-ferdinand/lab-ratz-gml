@@ -1,0 +1,1 @@
+light_dir += light_rotate_speed;

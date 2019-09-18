@@ -1,16 +1,19 @@
 // Pause game
-if (keyboard_check_pressed(vk_escape)) 
-{ 
-	pause = !pause;
-	game_stop = !game_stop;
-}
-if (pause)
+if (instance_exists(obj_player))
 {
-	game_stop = true;	
-}
-else
-{
-	game_stop = false;	
+	if (keyboard_check_pressed(vk_escape)) and (!obj_player.freeze)
+	{ 
+		pause = !pause;
+		game_stop = !game_stop;
+	}
+	if (pause)
+	{
+		game_stop = true;	
+	}
+	else
+	{
+		game_stop = false;	
+	}
 }
 
 if (keyboard_check_pressed(ord("P"))) { game_restart(); } 
@@ -26,3 +29,7 @@ if (!audio_is_playing(snd_ambient_1))
 {
 	audio_play_sound(snd_ambient_1, 0, 0);
 }
+//if (!audio_is_playing(snd_soundtrack))
+//{
+//	audio_play_sound(snd_soundtrack, 0, 0);
+//}	

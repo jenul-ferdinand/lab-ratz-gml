@@ -6,6 +6,7 @@ vspd = 0;
 spd = 2;
 hit = false;
 counter = 0;
+freeze = false;
 
 // Knockback
 hspd_force = 0;

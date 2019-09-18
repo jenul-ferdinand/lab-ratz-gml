@@ -1,36 +1,39 @@
-if (game_stop) and (holding != parent_gun) exit;
+if (game_stop) exit;
+//if (holding != parent_gun) exit;
 
 // Destroy
 if (destroy) { instance_destroy(); }
 
 var player_direction = point_direction(x, y, obj_player.x, obj_player.y);
+var mouse_dir = point_direction(x, y, mouse_x, mouse_y);
 
 switch (state)
 {
-	#region Normal
 	case "Normal":
-		var dir = point_direction(x, y, mouse_x, mouse_y);
 		// Origin
-		x = holder.x - lengthdir_x(current_recoil, dir);
-		y = (holder.y - 9) - lengthdir_y(current_recoil, dir);
+		x = holder.x - lengthdir_x(current_recoil, mouse_dir);
+		y = (holder.y - 9) - lengthdir_y(current_recoil, mouse_dir);
 		// Rotation
-		image_angle = dir;
+		image_angle = mouse_dir;
 		// Vertical flipping
-		if (dir > 90) and (dir < 270) { image_yscale = -1; } else { image_yscale = 1; } 
-
+		if (mouse_dir > 90) and (mouse_dir < 270) { image_yscale = -1; } else { image_yscale = 1; } 
+		
+		// Mechanics
 		#region Shooting
 		var mouseb;
 		if (automatic) { mouseb = mouse_check_button(bind_shoot); } 
 		else { mouseb = mouse_check_button_pressed(bind_shoot); }
+		// Trigger
 		if (mouseb) 
 		{
+			// Activate cooldown
 			if (cooldown == 0)
 			{
 				cooldown = firerate;
 				cooldown_delay = cooldown_startup;
 			}
 		}
-		if (cooldown_delay == 0) 
+		if (cooldown_delay == 0) and (!obj_player.freeze)
 		{
 			if (mag != 0)
 			{
@@ -42,10 +45,10 @@ switch (state)
 				for (var i = 0; i < bullet_amount; i++)
 				{
 					// Bullet
-					var buffer_x = lengthdir_x(bullet_buffer, dir);
-					var buffer_y = lengthdir_y(bullet_buffer, dir);
+					var buffer_x = lengthdir_x(bullet_buffer, mouse_dir);
+					var buffer_y = lengthdir_y(bullet_buffer, mouse_dir);
 					var inst = instance_create_layer(x + buffer_x, (y - bullet_vertex) + buffer_y, "instances", bullet);
-					inst.direction = dir;
+					inst.direction = mouse_dir;
 					inst.image_angle = inst.direction;
 					inst.speed = bullet_speed;
 					inst.bullet_creator = obj_player;
@@ -105,7 +108,6 @@ switch (state)
 		if (cooldown_delay == -1) { cooldown = max(0, cooldown-1); }
 		current_recoil = max(0, floor(current_recoil * 0.8));
 		#endregion
-		
 		#region Reloading
 		if (mag <= 0) and (!reload) and (ammo > 0) and (!reload_counter_start) and (!mouse_check_button(mb_left))
 		{ 
@@ -146,7 +148,6 @@ switch (state)
 			mag_save = 0;
 		}	
 		#endregion
-		
 		#region Flashlight and Lasersight
 		if (keyboard_check_pressed(bind_flashlight))
 		{
@@ -162,7 +163,6 @@ switch (state)
 			recoil_push = 0; 
 		}
 		#endregion
-		
 		#region Dropping gun
 		if (obj_player.holding != undefined)
 		{
@@ -180,9 +180,7 @@ switch (state)
 		}
 		#endregion
 		break;
-	#endregion
 	
-	#region Dropped
 	case "Dropped":
 		if (room == room_id)
 		{
@@ -252,5 +250,4 @@ switch (state)
 			}
 		}
 		break;
-	#endregion
 }

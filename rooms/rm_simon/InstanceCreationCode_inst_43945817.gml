@@ -1,0 +1,1 @@
+target_door = inst_50FFD75;

@@ -1,27 +1,5 @@
 //display_set_gui_size(view_width, view_height); This might screw things up
 
-// Enumerators
-enum menu_page
-{
-	main,
-	settings,
-	audio,
-	difficulty,
-	graphics,
-	controls,
-	height
-}
-
-enum menu_type
-{
-	script_runner,
-	page_transfer,
-	slider,
-	shift,
-	toggle,
-	input,
-}
-
 // Create menu pages
 ds_menu_main = scr_create_menu_page
 (

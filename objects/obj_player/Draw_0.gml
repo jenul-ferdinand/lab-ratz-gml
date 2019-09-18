@@ -7,24 +7,22 @@ draw_self();
 // Gun
 with (parent_gun) 
 {
-	var player_holding = other.holding;
-	if (!destroy) and (player_holding != undefined) and (state != "Dropped")
+	if (!destroy) and (other.holding != undefined) and (state != "Dropped")
 	{
-		draw_sprite_ext(
-			sprite_index, 
-			image_index, 
-			x, y, 
-			image_xscale, 
-			image_yscale, 
-			image_angle, 
-			c_white, 
-			image_alpha
-		);
+		draw_sprite_default();
+	}
+}
+
+with (parent_throwable)
+{
+	if (!destroy) and (state != "Dropped")
+	{
+		draw_sprite_default();
 	}
 }
 
 // Lighting
-scr_double_circle_lighting(
+double_circle_lighting(
 	0,
 	-lighting_height_buffer,
 	lighting_inner_colour,
