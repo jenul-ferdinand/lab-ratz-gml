@@ -12,6 +12,7 @@ audio_falloff_set_model(audio_falloff_exponent_distance);
 audio_emitter_falloff(emitter, emitter_min, emitter_max, 1)
 
 // Lighting
+lighting = true;
 lighting_height_buffer = -6;
 lighting_inner_colour = c_white;
 lighting_outer_colour = c_dkgray;

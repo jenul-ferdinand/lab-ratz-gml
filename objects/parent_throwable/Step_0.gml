@@ -1,4 +1,5 @@
 var mouse_dir = point_direction(x, y, mouse_x, mouse_y);
+var player_direction = point_direction(x, y, obj_player.x, obj_player.y);
 
 switch (state)
 {

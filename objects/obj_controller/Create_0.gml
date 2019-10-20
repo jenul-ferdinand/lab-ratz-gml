@@ -2,6 +2,7 @@ instance_create_depth(x, y, -9999, obj_console);
 cursor_sprite = spr_crosshair;
 
 // Init
+room_goto_next();
 init_globalvars();
 init_enums();
 
@@ -13,5 +14,10 @@ audio_group_load(audiogroup_soundeffects);
 scr_guns_stats();
 
 // Debug
-show_debug_overlay(true);
+debug = true;
 godmode = false;
+
+// Zombies
+globalvar zombie_amount;
+zombie_amount = 5;
+

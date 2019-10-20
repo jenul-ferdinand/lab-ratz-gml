@@ -26,5 +26,10 @@ subtitle_ybuffer = 100;
 subtitle_x = window_width / 2;
 subtitle_y = window_height - subtitle_ybuffer;
 subtitle[objective_state.annihilate] = "\"annihilate all enemy scientists!\"";
-subtitle[objective_state.simon] = "\"click the colours in order\""
+subtitle[objective_state.simon] = "\"click the colours in order\"";
+subtitle[objective_state.door_locked] = "\"this door is locked\"";
+
+// Interaction text
+draw_interaction_text = false;
+interact_cost = undefined;
 

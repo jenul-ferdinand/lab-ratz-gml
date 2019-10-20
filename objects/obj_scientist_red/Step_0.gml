@@ -45,7 +45,7 @@ if (gun_sprite_index == 0) and (index_change)
 }
 
 // Bullet collision
-enemy_hit(damage_resistance, hit_sfx, approach, notify, notify_object, false, -1, -1);
+enemy_hit(hit_sfx, approach, notify, notify_object, false, -1, -1);
 // Death
 enemy_death(death_points, death_object, sprite_idle, create_drop);
 // Flash Reduction

@@ -1,1 +1,3 @@
 randomise();
+
+droppable = true;

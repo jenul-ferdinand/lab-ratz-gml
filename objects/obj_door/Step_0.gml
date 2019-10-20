@@ -9,11 +9,11 @@ if (normal)
 else
 {
 	// Simon game
-	if (simon)
+	if (locked)
 	{
-		if (simon_complete)
+		if (complete)
 		{
-			simon = false;
+			locked = false;
 			normal = true;
 		}
 		else
@@ -29,6 +29,50 @@ switch (lighting_type)
 	case col.red:
 		lighting_inner_colour = make_colour_rgb(255, 0, 0);
 		lighting_outer_colour = make_colour_rgb(153, 0, 0);
+		
+		// Subtitle objective message
+		if (player_distance < interact_distance/2) 
+		{
+			if (!freezed)
+			{
+				// Freeze player
+				obj_player.freeze = true;
+				// Zoom in to player
+				obj_camera.zoom_in = true;
+				// Black bars
+				blackbars = instance_create_depth(x, y, -1000, obj_blackbars);
+				blackbars.slide_in = true;
+				// Execute text type
+				execute_objective(objective_state.door_locked); 
+				
+				// Activate
+				freezed = true;
+				freeze_counter_start = true;
+			}
+			
+			// Start counter
+			if (freeze_counter_start) { freeze_counter++; } 
+			// Timing
+			if (freeze_counter >= freeze_time)
+			{
+				// Un-Freeze player
+				obj_player.freeze = false;
+				// Zoom out from player
+				obj_camera.zoom_out = true;
+				// Black bars
+				blackbars.slide_out = true;
+				// Execute text type
+				execute_objective(undefined); 
+				// Bootstrap
+				freeze_counter_start = false;
+				freeze_counter = 0;
+			}	
+		}
+		else
+		{
+			// Allow the player to activate it again
+			freezed = false;	
+		}
 		break;
 		
 	case col.green:

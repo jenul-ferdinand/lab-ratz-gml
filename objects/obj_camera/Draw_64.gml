@@ -83,7 +83,7 @@ draw_set_font(fnt_points);
 draw_set_halign(fa_right);
 	var c, str, xx, yy, buffer;
 	points_draw = lerp(points_draw, points, 0.1);
-	str = string(ceil(points_draw));
+	str = string(round(points_draw));
 	xx = window_width - 10;
 	yy = 10;
 	buffer = 4;
@@ -95,3 +95,26 @@ draw_set_halign(fa_right);
 draw_set_halign(fa_left);
 draw_set_font(-1);
 #endregion
+
+if (draw_interaction_text)
+{
+	// Setting colour, font, and halignment
+	draw_set_colour(subtitle_colour);
+	draw_set_font(fnt_subtitle);
+	draw_set_halign(fa_center);
+	
+	// Drawing subtitles
+	if (interact_cost != undefined)
+	{
+		draw_text(subtitle_x, subtitle_y, "Press 'E' to interact ($" + string(interact_cost) + ")");
+	}
+	else
+	{
+		draw_text(subtitle_x, subtitle_y, "Press 'E' to interact");
+	}
+	
+	// Reset
+	draw_set_halign(fa_left);
+	draw_set_font(-1);
+	draw_set_colour(c_white);
+}

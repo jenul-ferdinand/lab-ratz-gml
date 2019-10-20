@@ -1,10 +1,5 @@
 if (game_stop) exit;
 
-if (keyboard_check_pressed(ord("H")))
-{
-	audio_play_sound(snd_soundtrack_complete_simon, 0, 0);
-}	
-
 if (!freeze)
 {
 	#region Movement
@@ -42,7 +37,8 @@ if (!freeze)
 	#region Collisions
 	var collisions = [
 		parent_environment,
-		parent_enemy, 
+		obj_zombie,
+		obj_player_collidable,
 		];
 	for (var i = 0; i < array_length_1d(collisions); i++)
 	{

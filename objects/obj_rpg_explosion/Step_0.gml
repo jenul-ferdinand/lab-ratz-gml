@@ -1,5 +1,4 @@
 if (target == undefined) exit;
-
 // Damage others
 var hit_damage = ds_list_create();
 var hits = instance_place_list(x, y, target, hit_damage, false);
@@ -25,7 +24,9 @@ if (hits > 0)
 				dir = other.last_direction;
 				force_dir = other.last_direction;
 				force_applied = 4;
+
 			}	
 		}	
+
 	}
 }

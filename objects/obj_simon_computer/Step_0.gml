@@ -35,7 +35,7 @@ if (point_distance(x, y, obj_player.x, obj_player.y) < interact_distance) and (!
 	interacted = true;
 }
 // Cancel
-if (keyboard_check_pressed(vk_escape)) and (obj_player.freeze) and (!target_door.simon_complete)
+if (keyboard_check_pressed(vk_escape)) and (obj_player.freeze) and (!target_door.complete)
 {
 	// Clear objective subtitles
 	execute_objective(undefined);
@@ -234,7 +234,7 @@ switch (state)
 			// Clear objective subtitles
 			execute_objective(undefined);
 			// Unlock next door
-			target_door.simon_complete = true;
+			target_door.complete = true;
 			// Execute completion
 			interacted = true;
 			state = "Idle";
@@ -255,7 +255,7 @@ switch (state)
 }
 
 // Completion cutscene
-if (target_door.simon_complete)
+if (target_door.complete)
 {
 	if (audio_is_playing(complete_soundtrack))
 	{

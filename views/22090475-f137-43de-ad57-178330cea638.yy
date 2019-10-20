@@ -19,7 +19,16 @@
         "ccc8c017-83c5-4123-ba80-cb9fd3c0550a",
         "6b6e95ad-ef8a-4bf4-b938-89527366b74e",
         "6dd928f2-ca6b-4c41-a665-a2cfacee8f34",
-        "cd03ed53-dd5f-4ca0-95f1-4e79dc1be4d5"
+        "cd03ed53-dd5f-4ca0-95f1-4e79dc1be4d5",
+        "d4880ce9-b31b-433b-a801-ae28f497a67b",
+        "4a83c4b7-ef35-40eb-ba7f-1f50b73a09e4",
+        "b037f19c-bdb6-48a1-b25e-70d8dd7fee9f",
+        "eb90d469-64fa-4362-9625-5459646fb818",
+        "1b69d975-9bf5-4da3-806b-373620efdda3",
+        "e3342d3e-dcbb-4ca3-bf92-374001c231e3",
+        "3dbd4f1c-54d2-4c70-b83a-486c2b5c38f4",
+        "7fdfc27d-9a7d-41f5-9695-88be2345bed3",
+        "d5aafc06-f1d7-4ab8-8b22-d136745f099f"
     ],
     "filterType": "GMSprite",
     "folderName": "Appliances",

@@ -1,5 +1,5 @@
-simon = true;
-simon_complete = false;
+locked = true;
+complete = false;
 normal = false;
 goal_x = 314;
 goal_y = 258;

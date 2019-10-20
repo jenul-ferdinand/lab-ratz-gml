@@ -21,9 +21,8 @@ wander_speed = 1;
 chase_speed = 2;
 
 // Stats
-hp = 100;
+hp = 200;
 damage = 20;
-damage_resistance = 0.5;
 gun_xbuffer = 0;
 gun_ybuffer = 22;
 bullet_amount = 1;

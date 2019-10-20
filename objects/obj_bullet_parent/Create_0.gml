@@ -2,6 +2,8 @@ bullet_creator = undefined;
 damage = undefined;
 destroy = false;
 // Lighting
+lighting_xbuffer = 0;
+lighting_ybuffer = 0;
 lighting_inner_colour = c_white;
 lighting_outer_colour = c_dkgray;
 lighting_inner_radius = 7;

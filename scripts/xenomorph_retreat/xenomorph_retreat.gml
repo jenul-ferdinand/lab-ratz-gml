@@ -25,7 +25,7 @@ y += vspd;
 		
 // Switching States
 if (player_distance > retreat_radius) { state = "Chase"; } 
-counter++
+counter++;
 if (counter >= retreat_time) { 
 	state = "Wander";
 	counter = 0;

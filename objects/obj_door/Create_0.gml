@@ -1,5 +1,9 @@
 image_index = 0;
 image_speed = 0;
+freeze_counter = 0;
+freeze_counter_start = false;
+freezed = false;
+freeze_time = room_speed * 4;
 
 // Interaction
 interact_distance = 76;
@@ -7,10 +11,14 @@ open = false;
 enterable = false;
 
 // Puzzles & Challenges
-keycard = false;
 normal = true;
-simon = false;
-simon_complete = false;
+complete = false;
+locked = false;
+
+keycard = false;
+annihilate = false;
+
+
 
 // Room changing
 goal_x = undefined;

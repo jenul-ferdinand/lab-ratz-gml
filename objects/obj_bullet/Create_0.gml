@@ -1,5 +1,9 @@
+// Inherit
 event_inherited();
+
+// Vars
 image_yscale = 1.25;
+alpha_loss = 0.01;
 
 // Lighting
 lighting_inner_colour = make_colour_rgb(173, 173, 173);

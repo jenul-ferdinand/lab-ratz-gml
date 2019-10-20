@@ -9,37 +9,31 @@ switch (state)
 		enemy_idle();
 		dashed = false;
 		break;
-		
 	case "Wander":
 		enemy_wander();
 		dashed = false;
 		break;
-		
 	case "Chase":
 		xenomorph_chase();
 		dashed = false;
 		break;
-		
 	case "Approach":
 		enemy_approach();
 		dashed = false;
 		break;
-	
 	case "Dash Melee": 
 		xenomorph_dashmelee(); 
 		break;
-		
 	case "Retreat":
 		xenomorph_retreat();
 		break;
-		
 	case "Knockback":
 		scientist_knockback();
 		break;
 }
 
 // Bullet collision
-enemy_hit(damage_resistance, hit_sfx, false, true, notify_object, false, -1, -1);
+enemy_hit(hit_sfx, approach, notify, notify_object, false, -1, -1);
 
 // Health
 enemy_death(points_death, object_dead, sprite_idle, false);

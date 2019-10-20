@@ -34,6 +34,7 @@ enum objective_state
 {
 	annihilate,
 	simon,
+	door_locked,
 }
 
 // Menu page and type

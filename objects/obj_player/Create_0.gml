@@ -3,7 +3,9 @@ randomise();
 image_speed = 1;
 hspd = 0;
 vspd = 0;
-spd = 2;
+default_speed = 2;
+slow_speed = default_speed / 2;
+spd = default_speed;
 hit = false;
 counter = 0;
 freeze = false;
@@ -17,6 +19,8 @@ force_dir = undefined;
 // Combat
 holding = undefined;
 hp = 100;
+
+points = 99999
 
 // Lighting
 lighting_inner_colour = make_colour_rgb(40, 40, 40);

@@ -1,37 +1,37 @@
 randomise();
 event_inherited();
 
-// Choose weapon
+// Init
 var gun_choose = choose(
 	gun_type.rpg,
 );
-
-// Init
 scientist_init(gun_choose);
-
-// Stats
-hp = 100;
-target = obj_player;
-damage_resistance = 1;
-death_points = 200;
-death_object = obj_scientist_dead;
 
 // A.I
 colliding = parent_enemy_collidables;
 idle_time = 10;
+// Chase
+chase_radius = shoot_radius * 1.25;
 chase_speed = 0.78;
+// Wander
 wander_time = 30;
 wander_speed = 0.4;
+// Approach
 approach = true;
 approach_time = room_speed * 10;
-chase_radius = shoot_radius * 1.25;
+// Notify
 notify = true;
 notify_radius = 60;
 notify_object = parent_enemy;
-
-// Bullet
-bullet_buffer = 18;
-bullet_spread = 4;
+// Death
+death_points = 200;
+death_object = obj_scientist_dead;
+// Stats
+hp = 100;
+// Drops
+create_drop = true;
+drops = [obj_ammobox, obj_medkit, obj_rpg];
+drop_chance = 32;
 
 // Gun
 index_change = true;
@@ -42,6 +42,9 @@ gun_yscale = 1;
 gun_alpha = 1;
 gun_imageblend = c_white;
 gun_sprite_index = 0;
+// Bullet
+bullet_buffer = 18;
+bullet_spread = 4;
 
 // Lighting
 lighting_inner_colour = make_colour_rgb(6, 6, 6);
@@ -49,7 +52,6 @@ lighting_outer_colour = make_colour_rgb(3, 3, 3);
 lighting_inner_radius = 20;
 lighting_outer_radius = 40;
 lighting_shake_amount = 1;
-
 // Flashlight
 flash_light = false;
 flash_light_fov = 35;
@@ -70,8 +72,3 @@ emitter_max = 64;
 emitter = audio_emitter_create();
 audio_falloff_set_model(audio_falloff_exponent_distance);
 audio_emitter_falloff(emitter, emitter_min, emitter_max, 1);
-
-// Drops
-create_drop = true;
-drops = [obj_ammobox, obj_medkit, obj_rpg];
-drop_chance = 46;

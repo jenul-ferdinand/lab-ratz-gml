@@ -1,5 +1,4 @@
 /// @desc enemy_hit()
-/// @param damage_resistance
 /// @param sound_effect
 /// @param approach?
 /// @param notify?
@@ -8,24 +7,22 @@
 /// @param knockback_power
 /// @param knockback_direction
 
-var damage_resistance = argument[0];
-var sound_effect = argument[1];
-var approach = argument[2]
-var notify = argument[3];
+var sound_effect = argument[0];
+var approach = argument[1]
+var notify = argument[2];
 if (notify == true)
-	var notify_object = argument[4];
+	var notify_object = argument[3];
 else 
 	var notify_object = undefined;
-var knockback = argument[5];
-var knockback_force = argument[6];
-var knockback_direction = argument[7];
+var knockback = argument[4];
+var knockback_force = argument[5];
+var knockback_direction = argument[6];
 
 if (hit) 
 { 
 	// Damage
-	var dmg;
-	with (obj_player.holding) { dmg = damage; }
-	hp -= dmg * damage_resistance;
+	var dmg = hit_damage;
+	hp -= dmg;
 	
 	// Hitmarker
 	audio_play_sound(sound_effect, 10, 0);
@@ -47,7 +44,6 @@ if (hit)
 	// Knockback
 	if (knockback)
 	{
-		state = "Knockback";
 		force_applied = knockback_force;
 		force_dir = knockback_direction;	
 	}

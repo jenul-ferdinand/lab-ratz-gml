@@ -49,5 +49,5 @@ if (knockback_player)
 	knockback_player = false;
 }
 
-enemy_hit(damage_resistance, snd_hitmarker, true, false, -1, true, 4, -player_direction);
+enemy_hit(snd_hitmarker, true, false, -1, true, 4, -player_direction);
 enemy_death(2000, obj_warden_dead, sprite_idle, false);

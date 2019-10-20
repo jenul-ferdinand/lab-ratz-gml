@@ -1,9 +1,8 @@
 /// @desc scientist_init
 /// @param choosing guns
 
-var gun_map = ds_gun[argument[0]];
-
 // Init
+target = obj_player;
 hit = false;
 hspd = 0;
 vspd = 0;
@@ -21,10 +20,14 @@ flash_colour = c_white;
 flash_reduction = 0.05;
 
 // Gun Map
-damage = gun_map[? "enemy_damage"];
-bullet_speed = gun_map[? "enemy_bullet_speed"];
-bullet_index = gun_map[? "bullet_type"];
-shoot_radius = gun_map[? "enemy_shoot_radius"];
-shoot_cooldown = gun_map[? "enemy_firerate"];
-shoot_sound = gun_map[? "sound_shoot"];
-gun_sprite = gun_map[? "sprite"];
+if (argument[0] != undefined)
+{
+	var gun_map = ds_gun[argument[0]];
+	damage = gun_map[? "enemy_damage"];
+	bullet_speed = gun_map[? "enemy_bullet_speed"];
+	bullet_index = gun_map[? "bullet_type"];
+	shoot_radius = gun_map[? "enemy_shoot_radius"];
+	shoot_cooldown = gun_map[? "enemy_firerate"];
+	shoot_sound = gun_map[? "sound_shoot"];
+	gun_sprite = gun_map[? "sprite"];
+}

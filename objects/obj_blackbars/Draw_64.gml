@@ -1,10 +1,3 @@
-// Debug
-if (debug)
-{
-	if (keyboard_check_pressed(ord("G"))) { slide_in = true; }
-	if (keyboard_check_pressed(ord("H"))) { slide_out = true; }
-}
-
 // Drawing bars
 draw_set_colour(bar_colour);
 draw_rectangle(0, 0, window_width, bar_height, false);

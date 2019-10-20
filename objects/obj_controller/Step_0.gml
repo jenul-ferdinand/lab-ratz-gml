@@ -1,3 +1,5 @@
+show_debug_overlay(debug);
+
 // Pause game
 if (instance_exists(obj_player))
 {

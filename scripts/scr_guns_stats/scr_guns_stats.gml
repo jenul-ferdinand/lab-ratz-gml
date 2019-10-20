@@ -11,22 +11,22 @@ m[? "sprite"] = spr_ak47
 m[? "mag"] = 30
 m[? "ammo"] = 90
 m[? "automatic"] = true
-m[? "reload_time"] = room_speed * 1.05
+m[? "reload_time"] = room_speed * 2.25
 m[? "recoil"] = 7
 m[? "recoil_push"] = 1.2
 m[? "sound_shoot"] = snd_ak47_shoot
 m[? "bullet_type"] = obj_bullet
 m[? "bullet_amount"] = 1
-m[? "damage"] = 24
-m[? "firerate"] = 8
-m[? "bullet_speed"] = 3
-m[? "bullet_spread"] = 8
-m[? "laser_sight"] = true
+m[? "damage"] = 22
+m[? "firerate"] = 5.5
+m[? "bullet_speed"] = 2
+m[? "bullet_spread"] = 10
+m[? "laser_sight"] = false
 m[? "bullet_buffer"] = 18
 m[? "bullet_vertex"] = 1
 
 m[? "enemy_firerate"] = 24
-m[? "enemy_damage"] = 6
+m[? "enemy_damage"] = 16
 m[? "enemy_bullet_speed"] = 2
 m[? "enemy_shoot_radius"] = 200
 #endregion
@@ -53,10 +53,10 @@ m[? "laser_sight"] = true
 m[? "bullet_buffer"] = 18
 m[? "bullet_vertex"] = 1
 
-m[? "enemy_firerate"] = 50
-m[? "enemy_damage"] = 8
-m[? "enemy_bullet_speed"] = 1.8
-m[? "enemy_shoot_radius"] = 180
+m[? "enemy_firerate"] = 60
+m[? "enemy_damage"] = 20
+m[? "enemy_bullet_speed"] = 2.2
+m[? "enemy_shoot_radius"] = 160
 #endregion
 #region Vector
 index = gun_type.vector;
@@ -232,8 +232,8 @@ ds_gun[index] = ds_map_create();
 var m = ds_gun[index];
 m[? "object"] = obj_ruger
 m[? "sprite"] = spr_ruger
-m[? "mag"] = 999999999
-m[? "ammo"] = 0
+m[? "mag"] = 6
+m[? "ammo"] = 12
 m[? "automatic"] = false
 m[? "reload_time"] = room_speed * 0.76
 m[? "recoil"] = 4
@@ -241,8 +241,8 @@ m[? "recoil_push"] = 0.1
 m[? "sound_shoot"] = snd_desert_eagle
 m[? "bullet_type"] = obj_bullet
 m[? "bullet_amount"] = 1
-m[? "damage"] = 17
-m[? "firerate"] = 4
+m[? "damage"] = 15
+m[? "firerate"] = 8
 m[? "bullet_speed"] = 2
 m[? "bullet_spread"] = 10
 m[? "laser_sight"] = false
@@ -250,8 +250,8 @@ m[? "bullet_buffer"] = 11
 m[? "bullet_vertex"] = 1
 
 m[? "enemy_firerate"] = 37
-m[? "enemy_damage"] = 4
-m[? "enemy_bullet_speed"] = 1.3
+m[? "enemy_damage"] = 10
+m[? "enemy_bullet_speed"] = 1.8
 m[? "enemy_shoot_radius"] = 160
 #endregion
 #region AWP
